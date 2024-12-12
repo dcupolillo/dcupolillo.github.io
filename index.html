@@ -1,163 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dario Cupolillo's Portfolio</title>
-  <style>
-    body {
-      background-color: #161618;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-    }
-    .side-buttons {
-      position: fixed;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 3s;
-    }
-    .side-button {
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      position: relative;
-      transition: transform 0.3s ease-in-out;
-    }
-    .side-button:hover {
-      transform: scale(1.2);
-    }
-    .side-button:hover::after {
-      content: attr(alt);
-      position: absolute;
-      left: 50px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.9em;
-      white-space: nowrap;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    }
-    .central-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      animation: fadeIn 3s ease-in-out;
-    }
-    .name {
-      color: #eae9f1;
-      font-size: 4em;
-      font-weight: bold;
-      font-family: 'Aptos', sans-serif;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 1s;
-    }
-    .position {
-      color: #2c4988;
-      font-size: 2em;
-      font-family: 'Aptos', sans-serif;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 1.5s;
-      margin-bottom: 20px;
-    }
-    .photo {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dario Cupolillo's Portfolio</title>
+    <style>
+      body {
+        background-color: #161618;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+      .central-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        animation: fadeIn 3s ease-in-out;
+      }
+      .name {
+        color: #eae9f1;
+        font-size: 4em;
+        font-weight: bold;
+        font-family: "Aptos", sans-serif;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 1s;
+      }
+      .position {
+        color: #2c4988;
+        font-size: 2em;
+        font-family: "Aptos", sans-serif;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 1.5s;
+        margin-bottom: 20px;
+      }
+      .photo {
         width: 300px;
         height: 300px;
         border-radius: 50%;
-        background-image: url('your-photo.jpg');
+        background-image: url("your-photo.jpg");
         background-size: cover;
         background-position: center;
         opacity: 0;
         animation: fadeIn 2s forwards;
         animation-delay: 2s;
         margin-top: 10px;
-    }
-    .icons {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: 10px;
-      align-items: center;
-    }
-    .icon {
-      width: 30px;
-      height: 30px;
-      margin: 0 15px;
-      transition: transform 0.3s ease-in-out;
-      opacity: 0;
-      animation: fadeInScale 2s forwards;
-      animation-delay: 3s;
-      transition: transform 0.3s ease-in-out;
-    }
-    .icon:hover {
-      transform: scale(1.2);
-    }
-    @keyframes fadeIn {
-      from {
+      }
+      .icons {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+        align-items: center;
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 15px;
+        transition: transform 0.3s ease-in-out;
         opacity: 0;
+        animation: fadeInScale 2s forwards;
+        animation-delay: 3s;
       }
-      to {
-        opacity: 1;
+      .icon:hover {
+        transform: scale(1.2);
       }
-    }
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.5);
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
-      to {
-        opacity: 1;
-        transform: scale(1);
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="side-buttons">
-    <a href="#about-me">
-      <img src="assets/person-circle.svg" alt="About Me" class="side-button">
-    </a>
-    <a href="#education">
-      <img src="assets/education-icon.svg" alt="Education" class="side-button">
-    </a>
-    <a href="#publication">
-      <img src="assets/publication-icon.svg" alt="Publication" class="side-button">
-    </a>
-  </div>
-  <div class="central-block">
-    <div class="name">Dario Cupolillo</div>
-    <div class="position">Postdoc</div>
-    <div class="icons">
-      <a href="https://yourwebsite1.com" target="_blank">
-        <img src="assets/gmail.svg" alt="Website 1" class="icon">
-      </a>
-      <a href="https://www.linkedin.com/in/dariocupolillo" target="_blank">
-        <img src="assets/linkedin.svg" alt="Website 2" class="icon">
-      </a>
-      <a href="https://github.com/dcupolillo" target="_blank">
-        <img src="assets/github.svg" alt="Website 3" class="icon">
-      </a>
-      <a href="https://orcid.org/0000-0002-1517-3815" target="_blank">
-        <img src="assets/orcid.svg" alt="Website 4" class="icon">
-      </a>
-      <a href="https://yourwebsite4.com" target="_blank">
-        <img src="assets/googlemaps.svg" alt="Website 5" class="icon">
-      </a>
+    </style>
+  </head>
+  <body>
+    <div class="central-block">
+      <div class="name">Dario Cupolillo</div>
+      <div class="position">Postdoc</div>
+      <div class="icons">
+        <a href="https://yourwebsite1.com" target="_blank">
+          <img src="assets/gmail.svg" alt="Website 1" class="icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/dariocupolillo" target="_blank">
+          <img src="assets/linkedin.svg" alt="Website 2" class="icon" />
+        </a>
+        <a href="https://github.com/dcupolillo" target="_blank">
+          <img src="assets/github.svg" alt="Website 3" class="icon" />
+        </a>
+        <a href="https://orcid.org/0000-0002-1517-3815" target="_blank">
+          <img src="assets/orcid.svg" alt="Website 4" class="icon" />
+        </a>
+        <a href="https://yourwebsite4.com" target="_blank">
+          <img src="assets/googlemaps.svg" alt="Website 5" class="icon" />
+        </a>
+      </div>
+      <div class="photo"></div>
     </div>
-    <div class="photo"></div>
-  </div>
-</body>
+  </body>
 </html>
