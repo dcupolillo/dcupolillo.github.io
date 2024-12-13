@@ -1,0 +1,182 @@
+body {
+  background-color: #161618;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 50px;
+  background-color: #161618;
+  color: #eae9f1;
+  margin-top: 0;
+}
+
+section h1 {
+  font-family: "Aptos", sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-family: "Aptos", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Central Block */
+.central-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Side Buttons */
+.side-buttons {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-button {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  animation: slideInFromLeft 1s ease-out forwards;
+  animation-delay: 3s;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.side-button:hover {
+  color: #2c4988;
+  transform: scale(1.2);
+}
+
+.side-button:hover::after {
+  content: attr(alt);
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: "Aptos", sans-serif;
+  font-size: 15px;
+  white-space: nowrap;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.side-button:hover::after {
+  opacity: 1;
+}
+
+/* Name Section */
+.name {
+  color: #eae9f1;
+  font-size: 4em;
+  font-weight: bold;
+  font-family: "Aptos", sans-serif;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
+}
+
+/* Position Section */
+.position {
+  color: #2c4988;
+  font-size: 2.5em;
+  font-family: "Aptos", sans-serif;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1.5s;
+  margin-bottom: 20px;
+}
+
+/* Photo */
+.photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: url("your-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+  margin-top: 10px;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInScale 2s forwards;
+  animation-delay: 3s;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

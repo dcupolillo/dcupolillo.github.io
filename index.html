@@ -4,112 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dario Cupolillo's Portfolio</title>
-    <style>
-      body {
-        background-color: #161618;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-      }
-      .central-block {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        animation: fadeIn 3s ease-in-out;
-      }
-      .name {
-        color: #eae9f1;
-        font-size: 4em;
-        font-weight: bold;
-        font-family: "Aptos", sans-serif;
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-        animation-delay: 1s;
-      }
-      .position {
-        color: #2c4988;
-        font-size: 2em;
-        font-family: "Aptos", sans-serif;
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-        animation-delay: 1.5s;
-        margin-bottom: 20px;
-      }
-      .photo {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background-image: url("your-photo.jpg");
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-        animation-delay: 2s;
-        margin-top: 10px;
-      }
-      .icons {
-        display: flex;
-        justify-content: flex-start;
-        margin-top: 10px;
-        align-items: center;
-      }
-      .icon {
-        width: 30px;
-        height: 30px;
-        margin: 0 15px;
-        transition: transform 0.3s ease-in-out;
-        opacity: 0;
-        animation: fadeInScale 2s forwards;
-        animation-delay: 3s;
-      }
-      .icon:hover {
-        transform: scale(1.2);
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes fadeInScale {
-        from {
-          opacity: 0;
-          transform: scale(0.5);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="central-block">
+    <div class="side-buttons">
+      <a href="#home" class="side-button" alt="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="#about-me" class="side-button" alt="About me">
+        <i class="fa-solid fa-user"></i>
+      </a>
+      <a href="#skills" class="side-button" alt="Skills">
+        <i class="fa-solid fa-lightbulb side-button"></i>
+      </a>
+    </div>
+    <div id="home" class="central-block">
       <div class="name">Dario Cupolillo</div>
       <div class="position">Postdoc</div>
       <div class="icons">
-        <a href="https://yourwebsite1.com" target="_blank">
-          <img src="assets/gmail.svg" alt="Website 1" class="icon" />
+        <a href="mailto:dario.cupolillo@gmail.com" target="_blank">
+          <img
+            src="https://cdn.simpleicons.org/gmail/white"
+            alt="Website 1"
+            class="icon"
+          />
         </a>
         <a href="https://www.linkedin.com/in/dariocupolillo" target="_blank">
-          <img src="assets/linkedin.svg" alt="Website 2" class="icon" />
+          <img
+            src="https://cdn.simpleicons.org/linkedin/white"
+            alt="Website 2"
+            class="icon"
+          />
         </a>
         <a href="https://github.com/dcupolillo" target="_blank">
-          <img src="assets/github.svg" alt="Website 3" class="icon" />
+          <img
+            src="https://cdn.simpleicons.org/github/white"
+            alt="Website 3"
+            class="icon"
+          />
         </a>
         <a href="https://orcid.org/0000-0002-1517-3815" target="_blank">
-          <img src="assets/orcid.svg" alt="Website 4" class="icon" />
+          <img
+            src="https://cdn.simpleicons.org/orcid/white"
+            alt="Website 4"
+            class="icon"
+          />
         </a>
         <a href="https://yourwebsite4.com" target="_blank">
-          <img src="assets/googlemaps.svg" alt="Website 5" class="icon" />
+          <img
+            src="https://cdn.simpleicons.org/googlemaps/white"
+            alt="Website 5"
+            class="icon"
+          />
         </a>
       </div>
       <div class="photo"></div>
+      <div class="resume-button">
+        <a href="assets/resume.pdf" download>
+          <button class="download-button">Resume</button>
+        </a>
+      </div>
     </div>
+
+    <section id="about-me">
+      <h1>About Me</h1>
+      <p>About me section text</p>
+    </section>
+    <section id="skills">
+      <h1>Skills</h1>
+      <p>Skills section text</p>
+    </section>
   </body>
 </html>
