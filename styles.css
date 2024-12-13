@@ -149,6 +149,35 @@ section p {
   transform: scale(1.2);
 }
 
+.resume-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-button {
+  font-family: "Aptos", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  background-color: #2c4988;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #1a3566;
+}
+
+.download-button:active {
+  background-color: #162a52;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
