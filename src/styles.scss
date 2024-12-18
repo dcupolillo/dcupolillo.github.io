@@ -1,5 +1,7 @@
+$background-color: #161618;
+
 body {
-  background-color: #161618;
+  background-color: $background-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,7 +259,6 @@ section p {
   background: #2c4988;
   z-index: 0;
 }
-
 #experience-timeline:after {
   position: absolute;
   content: "";
@@ -284,13 +285,11 @@ section p {
   font-weight: 300;
   color: #374054;
 }
-
 .vtimeline-content h4 {
   font-size: 1.2em;
   font-weight: 300;
   color: #7e8890;
 }
-
 .vtimeline-content p {
   font-size: 0.9em;
   color: #74808a;
@@ -306,7 +305,6 @@ section p {
   z-index: 99;
   margin-left: 200px;
 }
-
 .vtimeline-icon i {
   display: block;
   font-size: 2em;
@@ -333,6 +331,7 @@ section p {
     opacity: 1;
   }
 }
+
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -343,6 +342,7 @@ section p {
     transform: scale(1);
   }
 }
+
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-100%);
@@ -353,5 +353,3 @@ section p {
     opacity: 1;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
