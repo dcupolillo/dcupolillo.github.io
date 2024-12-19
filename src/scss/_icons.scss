@@ -1,0 +1,49 @@
+@use 'abstract/variables' as var;
+@use 'animations';
+@use 'abstract/mixins' as mx;
+
+@mixin icon(
+  $name,
+  $size
+) {
+  background-image: url(#{var.$icon-url}/#{$name}/#{var.$icon-color});
+  width: $size;
+  height: $size;
+  display: block;
+}
+
+.icons {
+    @include mx.flex-center(row);
+    gap: calc(var.$icon-margin * 2);
+    padding: 20px;
+    overflow: visible;
+  
+    .icon {
+        width: var.$icon-size;
+        height: var.$icon-size;
+        opacity: 0;
+        @include animations.appearance(fadeInScale, 1s, ease 1s, $opacity: 0);
+        @include mx.transition(transform, 0.3s, ease-in-out);
+        
+        &:hover {
+            transform: scale(1.2);
+            background-color: yellow;
+        }
+    }
+}
+
+.gmail-icon {
+    @include icon("gmail", $icon-size);
+}
+
+.github-icon {
+    @include icon("github", $icon-size);
+}
+
+.orcid-icon {
+    @include icon("orcid", $icon-size);
+}
+
+.linkedin-icon {
+    @include icon("linkedin", $icon-size);
+}

@@ -1,0 +1,167 @@
+body {
+  background-color: #161618;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d2d2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c4988;
+}
+
+section {
+  min-height: 100vh;
+  padding: 50px;
+  background-color: #161618;
+  color: #eae9f1;
+  margin-top: 0;
+}
+section h1 {
+  font-family: "Aptos", sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+section h1 :after {
+  position: absolute;
+  content: "";
+  top: 120%;
+  height: 3px;
+  width: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: #2c4988;
+}
+section p {
+  font-family: "Aptos", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+  padding: 20px;
+  overflow: visible;
+}
+.icons .icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  opacity: 0;
+  animation: fadeInScale 1s ease 1s forwards;
+  animation-delay: 0s;
+  transition: transform 0.3s ease-in-out;
+}
+.icons .icon:hover {
+  transform: scale(1.2);
+  background-color: yellow;
+}
+
+.gmail-icon {
+  background-image: url(https://cdn.simpleicons.org/gmail/white);
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.github-icon {
+  background-image: url(https://cdn.simpleicons.org/github/white);
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.orcid-icon {
+  background-image: url(https://cdn.simpleicons.org/orcid/white);
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.linkedin-icon {
+  background-image: url(https://cdn.simpleicons.org/linkedin/white);
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */
