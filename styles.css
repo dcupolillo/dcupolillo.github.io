@@ -103,7 +103,7 @@ section p {
   transition: transform 0.3s ease-in-out;
 }
 .icons .icon:hover, .icons .linkedin-icon:hover, .icons .orcid-icon:hover, .icons .github-icon:hover, .icons .gmail-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.2) !important;
 }
 
 .gmail-icon {
@@ -198,7 +198,7 @@ section p {
   height: 100vh;
 }
 .central-block .name {
-  opcaity: 0;
+  opacity: 0;
   animation: fadeIn 2s ease 1s forwards;
   color: #eae9f1;
   font-size: 4em;
@@ -207,7 +207,7 @@ section p {
   line-height: 1.5;
 }
 .central-block .position {
-  opcaity: 0;
+  opacity: 0;
   animation: fadeIn 2s ease 1s forwards;
   color: #2c4988;
   font-size: 2.5em;
