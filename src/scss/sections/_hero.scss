@@ -1,6 +1,5 @@
-
-@use '../abstract/variables' as var;
 @use '../abstract/mixins' as mx;
+@use '../abstract/variables' as var;
 @use '../animations';
 
 .central-block {
@@ -8,12 +7,12 @@
     height: 100vh;
   
     .name {
-        @include mx.text-style(var.$name-color, var.$name-font-size, bold);
+        @include mx.text-style(var.$name-color, var.$name-font-size, var.$font-family, bold);
         @include animations.appearance(fadeIn, 2s, ease, 1s, $opacity: 0);
     }
     
     .position {
-        @include mx.text-style(var.$position-color, var.$position-font-size, bold);
+        @include mx.text-style(var.$position-color, var.$position-font-size, var.$font-family, bold);
         @include animations.appearance(fadeIn, 2s, ease, 1.5s, $opacity: 0);
         margin-bottom: 20px;
     }

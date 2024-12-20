@@ -67,11 +67,11 @@ section p {
   }
 }
 @keyframes fadeInScale {
-  from {
+  0% {
     opacity: 0;
     transform: scale(0.5);
   }
-  to {
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -95,18 +95,15 @@ section p {
   padding: 20px;
   overflow: visible;
 }
-.icons .icon {
+.icons .icon, .icons .linkedin-icon, .icons .orcid-icon, .icons .github-icon, .icons .gmail-icon {
   width: 30px;
   height: 30px;
   opacity: 0;
-  opacity: 0;
   animation: fadeInScale 1s ease 1s forwards;
-  animation-delay: 0s;
   transition: transform 0.3s ease-in-out;
 }
-.icons .icon:hover {
+.icons .icon:hover, .icons .linkedin-icon:hover, .icons .orcid-icon:hover, .icons .github-icon:hover, .icons .gmail-icon:hover {
   transform: scale(1.2);
-  background-color: yellow;
 }
 
 .gmail-icon {
@@ -146,11 +143,11 @@ section p {
   }
 }
 @keyframes fadeInScale {
-  from {
+  0% {
     opacity: 0;
     transform: scale(0.5);
   }
-  to {
+  100% {
     opacity: 1;
     transform: scale(1);
   }

@@ -7,11 +7,11 @@
     }
 }
 @keyframes fadeInScale {
-    from {
+    0% {
         opacity: 0;
         transform: scale(0.5);
     }
-    to {
+    100% {
         opacity: 1;
         transform: scale(1);
     }
@@ -30,14 +30,9 @@
 // General animation wrapper mixin
 @mixin appearance(
   $name, 
-  $duration: 2s, 
-  $timing: ease, 
-  $delay: 0s, 
-  $opacity: null, 
+  $duration,
+  $ease,
+  $delay
 ) {
-  @if $opacity != null {
-    opacity: $opacity;
-  }
-  animation: #{$name} #{$duration} #{$timing} forwards;
-  animation-delay: $delay;
+    animation: #{$animation} #{$duration} #{$ease} #{$delay} forwards;
 }

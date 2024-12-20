@@ -22,28 +22,31 @@
         width: var.$icon-size;
         height: var.$icon-size;
         opacity: 0;
-        @include animations.appearance(fadeInScale, 1s, ease 1s, $opacity: 0);
-        @include mx.transition(transform, 0.3s, ease-in-out);
-        
+        animation: fadeInScale 1s ease 1s forwards;
+        transition: transform 0.3s ease-in-out;
+
         &:hover {
             transform: scale(1.2);
-            background-color: yellow;
         }
     }
 }
 
 .gmail-icon {
     @include icon("gmail", $icon-size);
+    @extend .icon;
 }
 
 .github-icon {
     @include icon("github", $icon-size);
+    @extend .icon;
 }
 
 .orcid-icon {
     @include icon("orcid", $icon-size);
+    @extend .icon;
 }
 
 .linkedin-icon {
     @include icon("linkedin", $icon-size);
+    @extend .icon;
 }
