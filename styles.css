@@ -59,10 +59,10 @@ section p {
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
@@ -77,11 +77,11 @@ section p {
   }
 }
 @keyframes slideInFromLeft {
-  from {
+  0% {
     transform: translateX(-100%);
     opacity: 0;
   }
-  to {
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
@@ -135,10 +135,10 @@ section p {
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
@@ -153,12 +153,66 @@ section p {
   }
 }
 @keyframes slideInFromLeft {
-  from {
+  0% {
     transform: translateX(-100%);
     opacity: 0;
   }
-  to {
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.central-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.central-block .name {
+  opcaity: 0;
+  animation: fadeIn 2s ease 1s forwards;
+  color: #eae9f1;
+  font-size: 4em;
+  font-family: "Aptos", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.central-block .position {
+  opcaity: 0;
+  animation: fadeIn 2s ease 1s forwards;
+  color: #2c4988;
+  font-size: 2.5em;
+  font-family: "Aptos", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }/*# sourceMappingURL=styles.css.map */

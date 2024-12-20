@@ -1,10 +1,12 @@
-@import 'scss/abstract/variables';
+@import 'src/scss/abstract/variables';
 
-@import 'scss/base/base';
-@import 'scss/base/typography';
+@import 'src/scss/base/base';
+@import 'src/scss/base/typography';
 
-@import 'scss/abstract/mixins';
+@import 'src/scss/abstract/mixins';
 
-@import 'scss/icons';
-@import 'scss/animations';
+@import 'src/scss/icons';
+@import 'src/scss/animations';
+
+@import 'src/scss/sections/hero';
 
