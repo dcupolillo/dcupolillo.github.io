@@ -1,29 +1,33 @@
 @use '../abstract/variables' as var;
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
+  font-family: var.$font-family;
   min-height: 100vh;
-  padding: 50px;
+  padding: 25px;
   background-color: var.$background-color;
   color: var.$text-color;
   margin-top: 0;
   
   h1 {
-    font-family: var.$font-family;
+    font-family: inherit;
     font-size: 2.5em;
     margin-bottom: 20px;
     position: relative;
     text-align: center;
 
-    :after {
+    &:after {
       position: absolute;
       content: "";
       top: 120%;
       height: 3px;
-      width: 100px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      background: var.$primary-color;
+      width: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to right, transparent, var.$primary-color, transparent);
     }
   }
 

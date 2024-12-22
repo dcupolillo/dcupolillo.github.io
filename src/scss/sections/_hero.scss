@@ -1,6 +1,7 @@
 @use '../abstract/mixins' as mx;
 @use '../abstract/variables' as var;
 @use '../animations';
+@import '../components/buttons';
 
 .central-block {
     @include mx.flex-center(column);
@@ -18,5 +19,15 @@
         @include animations.appearance(fadeIn, 2s, ease, 1s);
         @include mx.text-style(var.$position-color, var.$position-font-size, var.$font-family, bold);
         margin-bottom: 20px;
+    }
+
+    .hero-cta{
+        opacity: 0;
+        @include animations.appearance(fadeIn, 2s, ease, 1s);
+        @include mx.text-style(var.$text-color, 20x, var.$font-family, bold);
+
+        .cta-button{
+            @extend .button;
+        }
     }
 }

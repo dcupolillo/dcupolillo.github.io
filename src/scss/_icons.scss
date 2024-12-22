@@ -24,6 +24,7 @@
         opacity: 0;
         animation: fadeInScale 1s ease 1s forwards;
         transition: transform 0.3s ease-in-out;
+        margin-bottom: 20px;
 
         &:hover {
             transform: scale(1.2) !important;

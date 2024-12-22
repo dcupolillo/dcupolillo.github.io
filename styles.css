@@ -27,30 +27,34 @@ body {
   background: #2c4988;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
+  font-family: "Aptos", sans-serif;
   min-height: 100vh;
-  padding: 50px;
+  padding: 25px;
   background-color: #161618;
   color: #eae9f1;
   margin-top: 0;
 }
 section h1 {
-  font-family: "Aptos", sans-serif;
+  font-family: inherit;
   font-size: 2.5em;
   margin-bottom: 20px;
   position: relative;
   text-align: center;
 }
-section h1 :after {
+section h1:after {
   position: absolute;
   content: "";
   top: 120%;
   height: 3px;
-  width: 100px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  background: #2c4988;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, transparent, #2c4988, transparent);
 }
 section p {
   font-family: "Aptos", sans-serif;
@@ -86,6 +90,16 @@ section p {
     opacity: 1;
   }
 }
+@keyframes slide-darken {
+  from {
+    background-color: #161618;
+    transform: translateX(0);
+  }
+  to {
+    background-color: black;
+    transform: translateX(24px);
+  }
+}
 .icons {
   display: flex;
   justify-content: center;
@@ -101,6 +115,7 @@ section p {
   opacity: 0;
   animation: fadeInScale 1s ease 1s forwards;
   transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px;
 }
 .icons .icon:hover, .icons .linkedin-icon:hover, .icons .orcid-icon:hover, .icons .github-icon:hover, .icons .gmail-icon:hover {
   transform: scale(1.2) !important;
@@ -162,6 +177,16 @@ section p {
     opacity: 1;
   }
 }
+@keyframes slide-darken {
+  from {
+    background-color: #161618;
+    transform: translateX(0);
+  }
+  to {
+    background-color: black;
+    transform: translateX(24px);
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -190,6 +215,134 @@ section p {
     opacity: 1;
   }
 }
+@keyframes slide-darken {
+  from {
+    background-color: #161618;
+    transform: translateX(0);
+  }
+  to {
+    background-color: black;
+    transform: translateX(24px);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-darken {
+  from {
+    background-color: #161618;
+    transform: translateX(0);
+  }
+  to {
+    background-color: black;
+    transform: translateX(24px);
+  }
+}
+.button, .central-block .hero-cta .cta-button {
+  background: linear-gradient(to right, #161618 50%, black 50%);
+  background-size: 200% 100%;
+  background-position: 0 0;
+  color: #eae9f1;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+.button:hover, .central-block .hero-cta .cta-button:hover {
+  background-position: 100% 0;
+}
+
+/*
+.side-buttons {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    @include flex-center(column);
+    gap: 20px;
+
+    .side-button {
+      font-size: $side-button-font-size;
+      color: $side-button-color;
+      cursor: pointer;
+      position: relative;
+      @include transition(transform);
+      @include animation(slideInFromLeft, 1s, ease-out, 3s, $opacity: 0, $transform: translateX(-100%));
+
+      &:hover {
+        color: $primary-color;
+        transform: scale(1.2);
+
+        &::after {
+          content: attr(alt);
+          position: absolute;
+          left: 50px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: $hover-color;
+          color: $side-button-color;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-family: $font-family;
+          font-size: 15px;
+          white-space: nowrap;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .resume-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .download-button {
+    @include text-style($primary-color, 10px);
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    @include transition(background-color 0.3s ease, transform 0.3s ease);
+    @include animation(fadeIn, 2s, ease, 3s, $opacity: 0);
+
+    &:hover {
+      background-color: #1a3566;
+    }
+
+    &:active {
+      background-color: #162a52;
+    }
+  }
+    */
 .central-block {
   display: flex;
   justify-content: center;
@@ -215,4 +368,13 @@ section p {
   font-weight: bold;
   line-height: 1.5;
   margin-bottom: 20px;
+}
+.central-block .hero-cta {
+  opacity: 0;
+  animation: fadeIn 2s ease 1s forwards;
+  color: #eae9f1;
+  font-size: 20x;
+  font-family: "Aptos", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
 }/*# sourceMappingURL=styles.css.map */
