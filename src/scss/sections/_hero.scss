@@ -11,6 +11,7 @@
         opacity: 0; // Hide the element initially
         @include animations.appearance(fadeIn, 2s, ease, 1s);
         @include mx.text-style(var.$name-color, var.$name-font-size, var.$font-family, bold);
+        text-transform: uppercase;
         
     }
     

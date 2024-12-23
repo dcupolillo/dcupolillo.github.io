@@ -1,5 +1,11 @@
 body {
+  position: relative;
   background-color: #161618;
+  background-image: url("src/assets/Composite.png");
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +15,16 @@ body {
   padding: 0;
   scroll-behavior: smooth;
 }
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -16,17 +32,55 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #161618;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d2d2d2;
+  background: gray;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2c4988;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-darken {
+  from {
+    background-color: #161618;
+    transform: translateX(0);
+  }
+  to {
+    background-color: black;
+    transform: translateX(24px);
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -35,29 +89,52 @@ section {
   font-family: "Aptos", sans-serif;
   min-height: 100vh;
   padding: 25px;
-  background-color: #161618;
   color: #eae9f1;
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
 }
 section h1 {
   font-family: inherit;
   font-size: 2.5em;
+  margin-top: 15%;
   margin-bottom: 20px;
   position: relative;
   text-align: center;
+  width: -moz-max-content;
+  width: max-content;
 }
 section h1:after {
   position: absolute;
   content: "";
   top: 120%;
   height: 3px;
-  width: 200px;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to right, transparent, #2c4988, transparent);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
 }
-section p {
-  font-family: "Aptos", sans-serif;
+section .about-me-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+section .about-me-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section .about-me-text {
+  margin-left: 5px;
+  max-width: 600px;
+}
+section .about-me-text p {
   font-size: 1.2em;
   line-height: 1.6;
 }
@@ -120,6 +197,20 @@ section p {
 .icons .icon:hover, .icons .linkedin-icon:hover, .icons .orcid-icon:hover, .icons .github-icon:hover, .icons .gmail-icon:hover {
   transform: scale(1.2) !important;
 }
+.icons .icon:after, .icons .linkedin-icon:after, .icons .orcid-icon:after, .icons .github-icon:after, .icons .gmail-icon:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #2c4988;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.icons .icon:hover:after, .icons .linkedin-icon:hover:after, .icons .orcid-icon:hover:after, .icons .github-icon:hover:after, .icons .gmail-icon:hover:after {
+  width: 100%;
+  left: 0;
+}
 
 .gmail-icon {
   background-image: url(https://cdn.simpleicons.org/gmail/white);
@@ -147,6 +238,62 @@ section p {
   width: 30px;
   height: 30px;
   display: block;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 5%;
+  background-color: black;
+  top: 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar ul li {
+  margin: 0 15px;
+  position: relative;
+}
+.navbar ul li a {
+  background: linear-gradient(to bottom, black 50%, #1a1a1a 50%);
+  background-size: 100% 200%;
+  background-position: 0 0;
+  float: left;
+  color: #eae9f1;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+.navbar ul li a:hover {
+  background-position: 0 100%;
+}
+.navbar ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.navbar ul li a:hover:before {
+  width: 100%;
+  left: 0;
 }
 
 @keyframes fadeIn {
@@ -358,6 +505,7 @@ section p {
   font-family: "Aptos", sans-serif;
   font-weight: bold;
   line-height: 1.5;
+  text-transform: uppercase;
 }
 .central-block .position {
   opacity: 0;
