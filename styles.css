@@ -86,7 +86,7 @@ html {
 }
 
 section {
-  font-family: "Aptos", sans-serif;
+  font-family: "Futura PT", sans-serif;
   min-height: 100vh;
   padding: 25px;
   color: #eae9f1;
@@ -110,7 +110,7 @@ section h1:after {
   position: absolute;
   content: "";
   top: 120%;
-  height: 3px;
+  height: 5px;
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -502,7 +502,7 @@ section .about-me-text p {
   animation: fadeIn 2s ease 1s forwards;
   color: #eae9f1;
   font-size: 4em;
-  font-family: "Aptos", sans-serif;
+  font-family: "Futura PT", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   text-transform: uppercase;
@@ -512,17 +512,16 @@ section .about-me-text p {
   animation: fadeIn 2s ease 1s forwards;
   color: #2c4988;
   font-size: 2.5em;
-  font-family: "Aptos", sans-serif;
+  font-family: "Futura PT", sans-serif;
   font-weight: bold;
   line-height: 1.5;
-  margin-bottom: 20px;
 }
 .central-block .hero-cta {
   opacity: 0;
   animation: fadeIn 2s ease 1s forwards;
   color: #eae9f1;
   font-size: 20x;
-  font-family: "Aptos", sans-serif;
+  font-family: "Futura PT", sans-serif;
   font-weight: bold;
   line-height: 1.5;
 }/*# sourceMappingURL=styles.css.map */

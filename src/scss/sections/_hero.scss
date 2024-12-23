@@ -19,7 +19,6 @@
         opacity: 0;
         @include animations.appearance(fadeIn, 2s, ease, 1s);
         @include mx.text-style(var.$position-color, var.$position-font-size, var.$font-family, bold);
-        margin-bottom: 20px;
     }
 
     .hero-cta{
