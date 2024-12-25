@@ -1,11 +1,12 @@
 @use '../abstract/variables' as var;
 
 body {
+    font-family: var.$font-family;
     position: relative;
     background-color: var.$background-color;
     background-image: url('src/assets/Composite.png');
     background-size: cover;
-    background-position: right bottom;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed; 
     display: flex;

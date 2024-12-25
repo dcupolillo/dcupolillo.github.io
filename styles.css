@@ -1,9 +1,10 @@
 body {
+  font-family: "Roboto", sans-serif;
   position: relative;
   background-color: #161618;
   background-image: url("src/assets/Composite.png");
   background-size: cover;
-  background-position: right bottom;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -86,20 +87,34 @@ html {
 }
 
 section {
-  font-family: "Futura PT", sans-serif;
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
+  height: 100vh;
   padding: 25px;
   color: #eae9f1;
   margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: top;
+  justify-content: center;
+}
+section .glass-container {
+  width: 50%;
+  height: 60%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.027);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 section h1 {
   font-family: inherit;
   font-size: 2.5em;
-  margin-top: 15%;
   margin-bottom: 20px;
   position: relative;
   text-align: center;
@@ -109,7 +124,7 @@ section h1 {
 section h1:after {
   position: absolute;
   content: "";
-  top: 120%;
+  top: 110%;
   height: 5px;
   width: 100%;
   left: 50%;
@@ -119,23 +134,44 @@ section h1:after {
 }
 section .about-me-content {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 20px;
+  padding: 20px;
+  width: 100%;
 }
 section .about-me-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 500px;
+  height: 320px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: hidden;
+  filter: contrast(1.2) saturate(1.5) brightness(1.2);
 }
 section .about-me-text {
-  margin-left: 5px;
-  max-width: 600px;
+  gap: 20px;
+  width: 100%;
+  text-align: justify;
+}
+section .about-me-text .intro-text {
+  font-size: 2em;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+section .about-me-text .subintro-text {
+  font-size: 1.5em;
+  color: #2c4988;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 5px;
 }
 section .about-me-text p {
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.6;
 }
 
@@ -496,13 +532,29 @@ section .about-me-text p {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
+}
+.central-block .glass-container {
+  width: 50%;
+  height: 60%;
+  padding: 30px;
+  background: 2px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 2s ease 1s forwards;
 }
 .central-block .name {
   opacity: 0;
   animation: fadeIn 2s ease 1s forwards;
   color: #eae9f1;
   font-size: 4em;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   text-transform: uppercase;
@@ -512,7 +564,7 @@ section .about-me-text p {
   animation: fadeIn 2s ease 1s forwards;
   color: #2c4988;
   font-size: 2.5em;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -521,7 +573,7 @@ section .about-me-text p {
   animation: fadeIn 2s ease 1s forwards;
   color: #eae9f1;
   font-size: 20x;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   line-height: 1.5;
 }/*# sourceMappingURL=styles.css.map */

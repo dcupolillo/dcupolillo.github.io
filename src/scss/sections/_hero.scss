@@ -6,6 +6,16 @@
 .central-block {
     @include mx.flex-center(column);
     height: 100vh;
+    width: 100%;
+
+    .glass-container {
+        width: 50%;
+        height: 60%;
+        padding: 30px;
+        @include mx.glass-effect(2px);
+        @include mx.flex-center(column);
+        @include animations.appearance(fadeIn, 2s, ease, 1s);
+      }
   
     .name {
         opacity: 0; // Hide the element initially
