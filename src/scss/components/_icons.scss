@@ -1,0 +1,71 @@
+@use '../abstract/variables' as var;
+@use '../animations';
+@use '../abstract/mixins' as mx;
+
+@mixin icon(
+  $name,
+  $size,
+  $color: var.$icon-color
+) {
+  background-image: url(#{var.$icon-url}/#{$name}/#{var.$icon-color});
+  width: $size;
+  height: $size;
+  display: block;
+}
+
+.icons {
+    @include mx.flex-center(row);
+    gap: calc(var.$icon-margin * 2);
+    padding: 20px;
+    overflow: visible;
+  
+    .icon {
+        width: var.$icon-size;
+        height: var.$icon-size;
+        opacity: 0;
+        animation: fadeInScale 1s ease 1s forwards;
+        transition: transform 0.3s ease-in-out;
+        margin-bottom: 20px;
+
+        &:hover {
+            transform: scale(1.2) !important;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -10px; // Adjust as needed
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var.$russian-violet;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+    
+        &:hover:after {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+
+.gmail-icon {
+    @include icon("gmail", var.$icon-size);
+    @extend .icon;
+}
+
+.github-icon {
+    @include icon("github", var.$icon-size);
+    @extend .icon;
+}
+
+.orcid-icon {
+    @include icon("orcid", var.$icon-size);
+    @extend .icon;
+}
+
+.linkedin-icon {
+    @include icon("linkedin", var.$icon-size);
+    @extend .icon;
+}
+

@@ -39,6 +39,34 @@
       transform: translateX(var.$about-me-button-width); // Adjust the value as needed
     }
 }
+
+@keyframes pulsate {
+    0% {
+      background: linear-gradient(to right, transparent, var.$primary-color, transparent);
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    25% {
+      background: linear-gradient(to right, transparent, var.$violet-blue, transparent);
+      transform: scaleX(1.1);
+      opacity: 0.8;
+    }
+    50% {
+      background: linear-gradient(to right, transparent, var.$primary-color, transparent);
+      transform: scaleX(1.2);
+      opacity: 0.6;
+    }
+    75% {
+      background: linear-gradient(to right, transparent, var.$violet-blue, transparent);
+      transform: scaleX(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      background: linear-gradient(to right, transparent, var.$primary-color, transparent);
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
   
 
 // General animation wrapper mixin

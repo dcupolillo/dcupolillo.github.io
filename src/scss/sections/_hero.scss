@@ -12,17 +12,20 @@
         width: 50%;
         height: 60%;
         padding: 30px;
-        @include mx.glass-effect(2px);
         @include mx.flex-center(column);
         @include animations.appearance(fadeIn, 2s, ease, 1s);
+        background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(0, 0, 0, 0) 70%
+        );
       }
   
     .name {
         opacity: 0; // Hide the element initially
         @include animations.appearance(fadeIn, 2s, ease, 1s);
         @include mx.text-style(var.$name-color, var.$name-font-size, var.$font-family, bold);
-        text-transform: uppercase;
-        
+        text-transform: uppercase;        
     }
     
     .position {

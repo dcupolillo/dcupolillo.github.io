@@ -1,4 +1,5 @@
 @use '../abstract/variables' as var;
+@use '../animations';
 
 body {
     font-family: var.$font-family;
@@ -44,6 +45,26 @@ body {
     background: var.$primary-color;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
   
+.section-header {
+  font-family: var.$font-family;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  width: max-content;
   
-  
+  &:after {
+    position: absolute;
+    content: "";
+    top: 110%;
+    height: 5px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, transparent, var.$primary-color, transparent);
+  }
+}

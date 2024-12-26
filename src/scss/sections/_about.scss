@@ -1,0 +1,95 @@
+@use '../abstract/variables' as var;
+@use '../animations';
+@use '../abstract/mixins' as mx;
+@use '../components/icons';
+
+.about-me-section {
+    font-family: var.$font-family;
+    min-height: 100vh;
+    padding: 25px;
+    color: var.$text-color;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    .glass-container {
+      width: auto;
+      max-width: 60%;
+      @include mx.flex-center(column);
+      background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(0, 0, 0, 0) 70%
+        );
+      
+      h1 {
+        font-family: inherit;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        position: relative;
+        text-align: center;
+        width: max-content;
+        text-transform: uppercase; 
+  
+        &:after {
+          position: absolute;
+          content: "";
+          top: 110%;
+          height: 5px;
+          left: 0%;
+          width: 100%;
+          transform: translateX(-50%);
+          background: linear-gradient(to right, transparent, var.$primary-color, transparent);
+          animation: pulsate 6s infinite;
+        }
+      }
+  
+      .about-me-content {
+        @include mx.flex-center(row);
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+      }
+  
+      .about-me-picture {
+        width: 500px;
+        height: 320px;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden; 
+        margin-right: 20px;
+        filter: contrast(1.2) saturate(1.5) brightness(1.2);
+      }
+  
+      .about-me-text {
+        gap: 10px;
+        width: 100%;
+        text-align: justify;
+  
+        .intro-text {
+          font-size: 2em;
+          margin: 0;
+          color: white;
+          font-weight: bold;
+          text-align: left;
+          text-transform: uppercase; 
+        }
+  
+        .subintro-text {
+          font-size: 1.8em;
+          color: var.$primary-color;
+          font-weight: bold;
+          text-align: left;
+          margin-top: 1px;
+        }
+  
+        p {
+          font-size: 1em;
+          line-height: 1.8;
+        }
+      }
+  
+    }
+  }

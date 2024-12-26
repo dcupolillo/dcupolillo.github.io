@@ -5,8 +5,12 @@
 
 @import 'src/scss/abstract/mixins';
 
-@import 'src/scss/icons';
+@import 'src/scss/components/icons';
 @import 'src/scss/animations';
 
-@import 'src/scss/sections/hero';
+@import 'src/scss/components/navbar';
+@import 'src/scss/components/buttons';
 
+@import 'src/scss/sections/hero';
+@import 'src/scss/sections/about';
+@import 'src/scss/sections/history';
