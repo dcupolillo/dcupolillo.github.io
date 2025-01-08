@@ -1,3 +1,10 @@
+$breakpoints: (
+  "small": 480px,    // Phones
+  "medium": 768px,   // Tablets
+  "large": 1024px,   // Small laptops
+  "xlarge": 1200px   // Larger screens
+);
+
 $background-color: #161618;
 $primary-color: #2c4988;
 $text-color: #eae9f1;

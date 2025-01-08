@@ -22,7 +22,6 @@
       }
   
     .name {
-        opacity: 0; // Hide the element initially
         @include animations.appearance(fadeIn, 2s, ease, 1s);
         @include mx.text-style(var.$name-color, var.$name-font-size, var.$font-family, bold);
         text-transform: uppercase;        
@@ -35,7 +34,6 @@
     }
 
     .hero-cta{
-        opacity: 0;
         @include animations.appearance(fadeIn, 2s, ease, 1s);
         @include mx.text-style(var.$text-color, 20x, var.$font-family, bold);
 

@@ -1,4 +1,14 @@
-@use 'variables' as var;
+@use './variables' as var;
+
+@mixin respond-to($size) {
+  @if map-has-key(var.$breakpoints, $size) {
+    @media (min-width: map-get(var.$breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$size} not found in $breakpoints map.";
+  }
+}
 
 @mixin flex-center(
   $direction: column

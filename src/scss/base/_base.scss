@@ -1,7 +1,16 @@
 @use '../abstract/variables' as var;
 @use '../animations';
+@use '../abstract/mixins' as mx;
 
 body {
+  @include mx.flex-center(column);
+  @include mx.text-style(
+    var.$text-color,
+    16px,
+    var.$font-family,
+    normal,
+    1.6
+  );
     font-family: var.$font-family;
     position: relative;
     background-color: var.$background-color;
@@ -18,6 +27,18 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+
+    @include mx.respond-to('medium') {
+      font-size: 18px;
+    }
+  
+    @include mx.respond-to('large') {
+      font-size: 20px;
+    }
+  
+    @include mx.respond-to('xlarge') {
+      font-size: 22px;
+    }
 
     &::before {
       content: '';
@@ -48,23 +69,3 @@ body {
   html {
     scroll-behavior: smooth;
   }
-  
-.section-header {
-  font-family: var.$font-family;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  position: relative;
-  text-align: center;
-  width: max-content;
-  
-  &:after {
-    position: absolute;
-    content: "";
-    top: 110%;
-    height: 5px;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(to right, transparent, var.$primary-color, transparent);
-  }
-}
