@@ -2,70 +2,58 @@
 @use '../animations';
 @use '../abstract/mixins' as mx;
 
+html {
+  scroll-behavior: smooth;
+}
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  @include mx.flex-center(column);
-  @include mx.text-style(
-    var.$text-color,
-    16px,
-    var.$font-family,
-    normal,
-    1.6
-  );
+    margin: var.$header-height 0 0 0;
     font-family: var.$font-family;
-    position: relative;
-    background-color: var.$background-color;
-    background-image: url('src/assets/Composite.png');
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
+    font-size: var.$font-size;
+    font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var.$text-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bd-grid {
+  max-width: 1024px;
+  display: -ms-grid;
+  display: grid;
+    -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding: 0 15px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
     margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+  }
+}
 
-    @include mx.respond-to('medium') {
-      font-size: 18px;
-    }
-  
-    @include mx.respond-to('large') {
-      font-size: 20px;
-    }
-  
-    @include mx.respond-to('xlarge') {
-      font-size: 22px;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4); // Adjust the transparency level here
-      z-index: -1; // Ensure the overlay is behind the content
-    }
+@media screen and (min-width: 1024px) {
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: var.$background-color;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: gray;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: var.$primary-color;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
+}

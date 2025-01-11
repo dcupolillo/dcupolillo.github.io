@@ -1,0 +1,41 @@
+@use '../abstract/variables' as var;
+
+.header {
+    width: 100%;
+    height: var.$header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 1.5rem;
+    background-color: black;
+    z-index: var.$z-fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.header__logo {
+    color: white;
+}
+
+.header__toggle {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        height: calc(var.$header-height + 1rem);
+    }
+
+    .header__logo, .header__toggle {
+        display: none !important;  
+    }
+}

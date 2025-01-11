@@ -29,17 +29,6 @@
     }
 }
 
-@keyframes slide-darken {
-    from {
-      background-color: var.$background-color;
-      transform: translateX(0);
-    }
-    to {
-      background-color: darken(var.$background-color, 10%);
-      transform: translateX(var.$about-me-button-width); // Adjust the value as needed
-    }
-}
-
 @keyframes pulsate {
     0% {
       background: linear-gradient(to right, transparent, var.$primary-color, transparent);

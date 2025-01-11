@@ -2,6 +2,7 @@
 
 @import 'src/scss/base/base';
 @import 'src/scss/base/typography';
+@import 'src/scss/base/header';
 
 @import 'src/scss/abstract/mixins';
 
@@ -9,9 +10,7 @@
 @import 'src/scss/animations';
 
 @import 'src/scss/components/navbar';
-@import 'src/scss/components/buttons';
 
-@import 'src/scss/sections/hero';
 @import 'src/scss/sections/about';
 @import 'src/scss/sections/projects';
 @import 'src/scss/sections/timeline';

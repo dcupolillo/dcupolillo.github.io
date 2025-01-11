@@ -1,9 +1,16 @@
-$breakpoints: (
-  "small": 480px,    // Phones
-  "medium": 768px,   // Tablets
-  "large": 1024px,   // Small laptops
-  "xlarge": 1200px   // Larger screens
-);
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
+
+$header-height: 3rem;
+$z-fixed: 100;
+
+$font-family: "Inter", sans-serif;
+$font-size: .938rem;
+$small-font-size: .813rem;
+
+@media screen and (min-width: 768px) {
+  $font-size: 1rem;
+  $small-font-size: .875rem;
+}
 
 $background-color: #161618;
 $primary-color: #2c4988;
@@ -19,25 +26,8 @@ $russian-violet: #510456ff;
 $dark-grey: #333333;
 $light-grey: #d2d2d2;
 
-$font-family: "Roboto", sans-serif;
 
 $icon-url: "https://cdn.simpleicons.org";
-$icon-size: 30px;
+$icon-size: 21px;
 $icon-margin: 15px;
 $icon-hover-scale: 1.2;
-
-$history-icon-size: 30px;
-
-$about-me-button-width: 24px;
-$about-me-button-height: 12px;
-
-$hover-color: rgba(0, 0, 0, 0.8);
-$side-button-color: white;
-$side-button-font-size: 30px;
-
-$name-color: #eae9f1;
-$name-font-size: 4em;
-$position-color: #2c4988;
-$position-font-size: 2.5em;
-
-$photo-dimension: 300px;

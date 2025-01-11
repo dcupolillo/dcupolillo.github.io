@@ -5,19 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dario Cupolillo | Postdoc</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
 
   <body>
+    <header class="header">
+      <a href="#" class="header__logo">Dario Cupolillo</a>
+      <i class="fa-solid fa-bars header__toggle" id="nav-toggle" aria-label="Open Menu"></i>
+      <nav class="navbar" id="nav-menu">
+        <div class="nav__content bd-grid">
+          <i class="fa-solid fa-xmark nav__close" id="nav-close" aria-label="Close Menu"></i>
+          <div class="nav__profile">
+            <div class="nav__img">
+              <img src="src/assets/portrait.png" alt="" />
+            </div>
+            <div>
+              <a href="#" class="nav__name">Dario Cupolillo</a>
+              <span class="nav__profesion">Postdoc</span>
+            </div>
+        </div>
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+            <li class="nav__item"><a href="#history" class="nav__link">History</a></li>
+            <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+            <li class="nav__item"><a href="#publications" class="nav__link">Publications</a></li> 
+          </ul>
+        </div>
+        <div class="nav__social">
+          <a href="https://github.com/dcupolillo" class="nav__social-icon github-icon" aria-label="GitHub" target="_blank"></a>
+          <a href="https://linkedin.com/dariocupolillo" class="nav__social-icon linkedin-icon" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:dario.cupolillo@egmail.com" class="nav__social-icon gmail-icon" aria-label="Gmail" target="_blank"></a>
+          <a href="https://orcid.org/0000-0002-1517-3815" class="nav__social-icon orcid-icon" aria-label="ORCID" target="_blank"></a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home">
+      <h1>Home</h1>
+    </section>
+    <section id="about">
+      <h1>About</h1>
+    </section>
+
+    <script src="js/script.js"></script>
+
+
   </body>
 </html>
 
