@@ -57,3 +57,37 @@ img {
     margin-right: auto;
   }
 }
+
+section {
+  font-family: var.$font-family;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 25px;
+  color: var.$text-color;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    
+  h1 {
+    font-family: inherit;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    width: max-content;
+
+    &:after {
+      position: absolute;
+      content: "";
+      top: 110%;
+      height: 5px;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to right, transparent, var.$primary-color, transparent);
+      @include animations.appearance(fadeIn, 1s, ease-in-out, 0.5s);
+    }
+  }
+}
