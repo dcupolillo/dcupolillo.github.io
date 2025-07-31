@@ -169,80 +169,6 @@ section h1:after {
   animation: fadeIn 1s ease-in-out 0.5s forwards;
 }
 
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: 21px;
-  display: inline-block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: 21px;
-  display: inline-block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: 21px;
-  display: inline-block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: 21px;
-  display: inline-block;
-}
-
-.googlemaps-icon {
-  background-image: url(https://cdn.simpleicons.org/googlemaps/white);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: 21px;
-  display: inline-block;
-}
-
-.italy-flag {
-  background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/it.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: calc(21px * 0.75);
-  display: inline-block;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.france-flag {
-  background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/fr.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 21px;
-  height: calc(21px * 0.75);
-  display: inline-block;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
 .header {
   width: 100%;
   height: 3rem;
@@ -456,6 +382,7 @@ section h1:after {
   width: 21px;
   height: 21px;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 .nav__social .linkedin-icon {
   background-image: url(https://cdn.simpleicons.org/linkedin/white);
@@ -465,6 +392,7 @@ section h1:after {
   width: 21px;
   height: 21px;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 .nav__social .gmail-icon {
   background-image: url(https://cdn.simpleicons.org/gmail/white);
@@ -474,6 +402,7 @@ section h1:after {
   width: 21px;
   height: 21px;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 .nav__social .orcid-icon {
   background-image: url(https://cdn.simpleicons.org/orcid/white);
@@ -483,6 +412,7 @@ section h1:after {
   width: 21px;
   height: 21px;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .nav__social {
@@ -880,7 +810,6 @@ section h1:after {
   flex-direction: column;
 }
 .history-section .glass-container h1 {
-  font-family: inherit;
   font-size: 2.5em;
   margin-bottom: 40px;
   position: relative;
@@ -1008,6 +937,7 @@ section h1:after {
   width: 16px;
   height: 16px;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
   content: "";
   flex-shrink: 0;
 }
@@ -1107,6 +1037,7 @@ section h1:after {
   width: 16px;
   height: 16px;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
   content: "";
   flex-shrink: 0;
 }
@@ -1258,4 +1189,308 @@ section h1:after {
 }
 .publication-section article .read-more-button:hover {
   background-color: #510456;
+}
+
+.skills-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 25px;
+}
+.skills-section .glass-container {
+  width: 800px;
+  height: 800px;
+  max-width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.skills-section .glass-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  width: -moz-max-content;
+  width: max-content;
+  text-transform: uppercase;
+}
+.skills-section .glass-container h1:after {
+  position: absolute;
+  content: "";
+  top: 110%;
+  height: 5px;
+  left: 0%;
+  width: 100%;
+  transform: translateX(0%);
+  background: linear-gradient(to right, transparent, #2c4988, transparent);
+}
+.skills-section .glass-container .skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .skills-section .glass-container .skills-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+  }
+}
+.skills-section .glass-container .skills-grid .skill-container {
+  background: rgba(255, 255, 255, 0.027);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid rgba(44, 73, 136, 0.2);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background: rgba(44, 73, 136, 0.1);
+  animation: fadeInFromBottom 0.8s ease-out forwards;
+}
+.skills-section .glass-container .skills-grid .skill-container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skills-section .glass-container .skills-grid .skill-container:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skills-section .glass-container .skills-grid .skill-container:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skills-section .glass-container .skills-grid .skill-container:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.skills-section .glass-container .skills-grid .skill-container:hover {
+  transform: translateY(-5px);
+  border-color: #2c4988;
+  background: rgba(44, 73, 136, 0.1);
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-title {
+  font-size: 1.3em;
+  color: #b704bb;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: auto;
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(20px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.python::before {
+  background-image: url(https://cdn.simpleicons.org/python/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.numpy::before {
+  background-image: url(https://cdn.simpleicons.org/numpy/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.pandas::before {
+  background-image: url(https://cdn.simpleicons.org/pandas/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.scipy::before {
+  background-image: url(https://cdn.simpleicons.org/scipy/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.scikit-learn::before {
+  background-image: url(https://cdn.simpleicons.org/scikitlearn/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.pytorch::before {
+  background-image: url(https://cdn.simpleicons.org/pytorch/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.opencv::before {
+  background-image: url(https://cdn.simpleicons.org/opencv/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.anaconda::before {
+  background-image: url(https://cdn.simpleicons.org/anaconda/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.arduino::before {
+  background-image: url(https://cdn.simpleicons.org/arduino/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.microsoft-visual-studio::before {
+  background-image: url("./src/assets/icons/visual-studio.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.git-hub::before {
+  background-image: url(https://cdn.simpleicons.org/github/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.imagej::before {
+  background-image: url(https://cdn.simpleicons.org/imagej/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.illustrator::before {
+  background-image: url("./src/assets/icons/illustrator.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.designspark-mechanical::before {
+  background-image: url("./src/assets/icons/RS.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  filter: brightness(0) invert(1);
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li.spyder::before {
+  background-image: url(https://cdn.simpleicons.org/spyderide/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li::after {
+  content: attr(data-skill);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(22, 22, 24, 0.9);
+  color: #eae9f1;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(44, 73, 136, 0.3);
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: #2c4988;
+  background: rgba(44, 73, 136, 0.2);
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li:hover::before {
+  filter: drop-shadow(0 0 8px #2c4988);
+}
+.skills-section .glass-container .skills-grid .skill-container .skill-list li:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
 }/*# sourceMappingURL=styles.css.map */

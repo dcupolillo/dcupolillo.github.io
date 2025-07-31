@@ -1,6 +1,3 @@
-# SCSS Compilation Output
-styles.css.map
-
 # Node.js dependencies (if using any build tools)
 node_modules/
 npm-debug.log*

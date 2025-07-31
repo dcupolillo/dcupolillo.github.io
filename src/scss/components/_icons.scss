@@ -12,27 +12,9 @@
   width: $size;
   height: $size;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 
-.gmail-icon {
-    @include icon("gmail", var.$icon-size);
-}
-
-.github-icon {
-    @include icon("github", var.$icon-size);
-}
-
-.orcid-icon {
-    @include icon("orcid", var.$icon-size);
-}
-
-.linkedin-icon {
-    @include icon("linkedin", var.$icon-size);
-}
-
-.googlemaps-icon {
-    @include icon("googlemaps", var.$icon-size);
-}
 
 @mixin flag(
   $country-code,
@@ -47,13 +29,4 @@
   display: inline-block;
   border-radius: 2px;
   flex-shrink: 0;
-}
-
-// Icon classes...
-.italy-flag {
-    @include flag("it", var.$icon-size);
-}
-
-.france-flag {
-    @include flag("fr", var.$icon-size);
 }
