@@ -1,17 +1,20 @@
-@import 'src/scss/abstract/variables';
+// Abstract layer first (variables and mixins)
+@use 'src/scss/abstract/variables' as var;
+@use 'src/scss/abstract/mixins' as mx;
 
-@import 'src/scss/base/base';
-@import 'src/scss/base/typography';
-@import 'src/scss/base/header';
+// Base layer
+@use 'src/scss/base/base';
+@use 'src/scss/base/typography';
+@use 'src/scss/base/header';
 
-@import 'src/scss/abstract/mixins';
+// Components layer
+@use 'src/scss/components/icons';
+@use 'src/scss/animations';
+@use 'src/scss/components/navbar';
 
-@import 'src/scss/components/icons';
-@import 'src/scss/animations';
-
-@import 'src/scss/components/navbar';
-
-@import 'src/scss/sections/about';
-@import 'src/scss/sections/projects';
-@import 'src/scss/sections/timeline';
-@import 'src/scss/sections/publications';
+// Sections layer
+@use 'src/scss/sections/about';
+@use 'src/scss/sections/projects';
+@use 'src/scss/sections/timeline';
+@use 'src/scss/sections/history';
+@use 'src/scss/sections/publications';

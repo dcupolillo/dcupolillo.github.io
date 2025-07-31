@@ -1,16 +1,17 @@
 @use '../abstract/variables' as var;
-@use '../animations';
-@use '../abstract/mixins' as mx;
 
 @mixin icon(
   $name,
   $size,
   $color: var.$icon-color
 ) {
-  background-image: url(#{var.$icon-url}/#{$name}/#{var.$icon-color});
+  background-image: url(#{var.$icon-url}/#{$name}/#{$color});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: $size;
   height: $size;
-  display: block;
+  display: inline-block;
 }
 
 .gmail-icon {
@@ -29,4 +30,30 @@
     @include icon("linkedin", var.$icon-size);
 }
 
+.googlemaps-icon {
+    @include icon("googlemaps", var.$icon-size);
+}
 
+@mixin flag(
+  $country-code,
+  $size: 16px
+) {
+  background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/#{$country-code}.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: $size;
+  height: calc(#{$size} * 0.75);
+  display: inline-block;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+// Icon classes...
+.italy-flag {
+    @include flag("it", var.$icon-size);
+}
+
+.france-flag {
+    @include flag("fr", var.$icon-size);
+}

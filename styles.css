@@ -1,15 +1,4 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -88,6 +77,27 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 0.938rem;
   font-weight: 500;
+  background: rgb(14, 14, 14);
+  background-attachment: fixed;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("src/assets/Composite.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  mix-blend-mode: screen;
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 75%, #161618 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 75%, #161618 100%);
 }
 
 ul {
@@ -126,99 +136,6 @@ img {
     margin-right: auto;
   }
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
 section {
   font-family: "Inter", sans-serif;
   min-height: 100vh;
@@ -245,11 +162,85 @@ section h1:after {
   content: "";
   top: 110%;
   height: 5px;
-  width: 100%;
+  width: 180%;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to right, transparent, #2c4988, transparent);
   animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+
+.gmail-icon {
+  background-image: url(https://cdn.simpleicons.org/gmail/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+}
+
+.github-icon {
+  background-image: url(https://cdn.simpleicons.org/github/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+}
+
+.orcid-icon {
+  background-image: url(https://cdn.simpleicons.org/orcid/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+}
+
+.linkedin-icon {
+  background-image: url(https://cdn.simpleicons.org/linkedin/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+}
+
+.googlemaps-icon {
+  background-image: url(https://cdn.simpleicons.org/googlemaps/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+}
+
+.italy-flag {
+  background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/it.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: calc(21px * 0.75);
+  display: inline-block;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.france-flag {
+  background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/fr.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: calc(21px * 0.75);
+  display: inline-block;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .header {
@@ -284,257 +275,6 @@ section h1:after {
     display: none !important;
   }
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
 .navbar {
   width: 100%;
   background-color: black;
@@ -638,12 +378,12 @@ section h1:after {
     text-align: center;
   }
 }
-.nav__profile .nav__profesion {
+.nav__profile .nav__position {
   font-size: 0.813rem;
   color: #2c4988;
 }
 @media screen and (min-width: 768px) {
-  .nav__profile .nav__profesion {
+  .nav__profile .nav__position {
     display: none;
   }
 }
@@ -710,27 +450,39 @@ section h1:after {
 }
 .nav__social .github-icon {
   background-image: url(https://cdn.simpleicons.org/github/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 21px;
   height: 21px;
-  display: block;
+  display: inline-block;
 }
 .nav__social .linkedin-icon {
   background-image: url(https://cdn.simpleicons.org/linkedin/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 21px;
   height: 21px;
-  display: block;
+  display: inline-block;
 }
 .nav__social .gmail-icon {
   background-image: url(https://cdn.simpleicons.org/gmail/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 21px;
   height: 21px;
-  display: block;
+  display: inline-block;
 }
 .nav__social .orcid-icon {
   background-image: url(https://cdn.simpleicons.org/orcid/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 21px;
   height: 21px;
-  display: block;
+  display: inline-block;
 }
 @media screen and (max-width: 768px) {
   .nav__social {
@@ -742,99 +494,6 @@ section h1:after {
   color: #2c4988; /* Replace with your primary color */
   font-weight: bold;
   border-bottom: 2px solid #2c4988; /* Optional underline for active state */
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
 }
 
 .about-me-section {
@@ -920,99 +579,6 @@ section h1:after {
 .about-me-section .glass-container .about-me-text p {
   font-size: 1em;
   line-height: 1.8;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
 }
 
 .project-section {
@@ -1123,99 +689,6 @@ section h1:after {
 }
 .project-section .tiles .tile:focus .info, .project-section .tiles .tile:hover .info {
   transition-delay: 0.25s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
-}
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
 }
 
 .timeline-section {
@@ -1387,97 +860,314 @@ section h1:after {
   margin: 1em 0 0 0.75em;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+.history-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 25px;
+  color: #eae9f1;
+  font-family: "Inter", sans-serif;
+}
+.history-section .glass-container {
+  width: 1200px;
+  height: 1000px;
+  max-width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.history-section .glass-container h1 {
+  font-family: inherit;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.history-section .glass-container h1:after {
+  position: absolute;
+  content: "";
+  top: 110%;
+  height: 5px;
+  left: 0%;
+  width: 100%;
+  transform: translateX(0%);
+  background: linear-gradient(to right, transparent, #2c4988, transparent);
+}
+.history-section .glass-container .history-content {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  min-width: 800px;
+}
+@media screen and (max-width: 1024px) {
+  .history-section .glass-container .history-content {
+    min-width: 700px;
   }
 }
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+@media screen and (max-width: 768px) {
+  .history-section .glass-container .history-content {
+    flex-direction: column;
+    gap: 20px;
+    min-width: unset;
+    width: 100%;
   }
 }
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+.history-section .glass-container .history-content .history-sidebar {
+  flex: 0 0 320px;
+  min-width: 320px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (max-width: 768px) {
+  .history-section .glass-container .history-content .history-sidebar {
+    flex: none;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    min-width: unset;
+    max-height: unset;
   }
 }
-@keyframes pulsate {
-  0% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  25% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  50% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1.2);
-    opacity: 0.6;
-  }
-  75% {
-    background: linear-gradient(to right, transparent, #5452a6, transparent);
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    background: linear-gradient(to right, transparent, #2c4988, transparent);
-    transform: scaleX(1);
-    opacity: 1;
+.history-section .glass-container .history-content .history-sidebar .history-button {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: rgba(44, 73, 136, 0.1);
+  opacity: 0;
+  animation: fadeInFromBottom 0.8s ease-out forwards;
+}
+@media screen and (max-width: 768px) {
+  .history-section .glass-container .history-content .history-sidebar .history-button {
+    min-width: 250px;
+    flex-shrink: 0;
   }
 }
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
+.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button .button-date {
+  font-size: 0.813rem;
+  color: #2c4988;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button .button-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #eae9f1;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button .button-organization {
+  font-size: 0.813rem;
+  color: #2c4988;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button .button-location {
+  font-size: 0.813rem;
+  color: #eae9f1;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.2;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button .button-location::before {
+  background-image: url(https://cdn.simpleicons.org/googlemaps/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  content: "";
+  flex-shrink: 0;
+}
+.history-section .glass-container .history-content .history-sidebar .history-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #2c4988;
+  background: rgba(44, 73, 136, 0.2);
+}
+.history-section .glass-container .history-content .history-sidebar .history-button.active {
+  border-color: #632885;
+  background: rgba(44, 73, 136, 0.2);
+  transform: translateY(-3px);
+}
+.history-section .glass-container .history-content .history-sidebar .history-button.active .button-title {
+  color: #b704bb;
+}
+.history-section .glass-container .history-content .history-details {
+  flex: 1;
+  min-width: 500px;
+  max-width: none;
+  height: 70%;
+  background: rgba(44, 73, 136, 0.1);
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeInFromBottom 0.8s ease-out 0.3s forwards;
+  overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+  .history-section .glass-container .history-content .history-details {
+    min-width: 400px;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+}
+@media screen and (max-width: 768px) {
+  .history-section .glass-container .history-content .history-details {
+    flex: 1;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    height: 400px;
+    padding: 25px;
   }
 }
-.gmail-icon {
-  background-image: url(https://cdn.simpleicons.org/gmail/white);
-  width: 21px;
-  height: 21px;
-  display: block;
+.history-section .glass-container .history-content .history-details .details-header {
+  flex-shrink: 0;
+  margin-bottom: 20px;
 }
-
-.github-icon {
-  background-image: url(https://cdn.simpleicons.org/github/white);
-  width: 21px;
-  height: 21px;
-  display: block;
+.history-section .glass-container .history-content .history-details .details-header .details-date {
+  font-size: 0.938rem;
+  color: #2c4988;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
-
-.orcid-icon {
-  background-image: url(https://cdn.simpleicons.org/orcid/white);
-  width: 21px;
-  height: 21px;
-  display: block;
+.history-section .glass-container .history-content .history-details .details-header .details-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #eae9f1;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
-
-.linkedin-icon {
-  background-image: url(https://cdn.simpleicons.org/linkedin/white);
-  width: 21px;
-  height: 21px;
-  display: block;
+.history-section .glass-container .history-content .history-details .details-header .details-organization {
+  font-size: 0.938rem;
+  color: #2c4988;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.history-section .glass-container .history-content .history-details .details-header .details-organization a {
+  color: #2c4988;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+.history-section .glass-container .history-content .history-details .details-header .details-organization a:hover {
+  color: #d2d2d2;
+  transform: translateY(-1px);
+}
+.history-section .glass-container .history-content .history-details .details-header .details-organization a:focus {
+  outline: 2px solid #2c4988;
+  outline-offset: 2px;
+}
+.history-section .glass-container .history-content .history-details .details-header .details-location {
+  font-size: 0.938rem;
+  color: #eae9f1;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.history-section .glass-container .history-content .history-details .details-header .details-location::before {
+  background-image: url(https://cdn.simpleicons.org/googlemaps/white);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  content: "";
+  flex-shrink: 0;
+}
+.history-section .glass-container .history-content .history-details .details-description {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.938rem;
+  line-height: 1.5;
+  color: #eae9f1;
+}
+.history-section .glass-container .history-content .history-details .details-description h3 {
+  color: #b704bb;
+  font-size: 1.1em;
+  margin: 20px 0 10px 0;
+  font-weight: 600;
+}
+.history-section .glass-container .history-content .history-details .details-description ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  list-style-type: disc;
+  padding-left: 0;
+}
+.history-section .glass-container .history-content .history-details .details-description ul li {
+  margin-bottom: 5px;
+  color: #eae9f1;
+  opacity: 0.9;
+  list-style-position: outside;
+  margin-left: 0;
+  padding-left: 0;
+}
+.history-section .glass-container .history-content .history-details .details-description p {
+  margin-bottom: 15px;
+  color: #eae9f1;
+  opacity: 0.9;
+}
+.history-section .glass-container .history-content .history-details .placeholder-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  opacity: 0.6;
+}
+.history-section .glass-container .history-content .history-details .placeholder-content .placeholder-icon {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.history-section .glass-container .history-content .history-details .placeholder-content .placeholder-text {
+  color: #eae9f1;
+  font-size: 0.938rem;
+  opacity: 0.7;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .history-section .glass-container {
+    max-width: 95%;
+  }
+  .history-section .glass-container h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
 }
 
 .publication-section {

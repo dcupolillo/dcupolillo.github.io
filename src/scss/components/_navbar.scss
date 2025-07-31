@@ -110,7 +110,7 @@
         }
     }
 
-    .nav__profesion {
+    .nav__position {
         font-size: var.$small-font-size;
         color: var.$primary-color;
 
@@ -187,21 +187,21 @@
         }
     }
 
-    // Custom Social Icons
+    // Custom Social Icons - Fixed namespace usage
     .github-icon {
-        @include icon("github", $icon-size);
+        @include icons.icon("github", var.$icon-size);
     }
 
     .linkedin-icon {
-        @include icon("linkedin", $icon-size);
+        @include icons.icon("linkedin", var.$icon-size);
     }
 
     .gmail-icon {
-        @include icon("gmail", $icon-size);
+        @include icons.icon("gmail", var.$icon-size);
     }
 
     .orcid-icon {
-        @include icon("orcid", $icon-size);
+        @include icons.icon("orcid", var.$icon-size);
     }
 
     @media screen and (max-width: 768px) {

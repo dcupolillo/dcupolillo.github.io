@@ -1,0 +1,70 @@
+# SCSS Compilation Output
+styles.css
+styles.css.map
+
+# Node.js dependencies (if using any build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# VS Code SCSS compilation artifacts
+.sass-cache/
+*.css.map
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor and IDE files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Build artifacts and deployment
+dist/
+build/
+.cache/
+
+# Assets that shouldn't be tracked (large files)
+*.psd
+*.ai
+*.sketch
+src/assets/raw/
+
+# GitHub Pages deployment (if using custom build)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# ORCID API cache (if implementing local caching)
+.api-cache/
+publications-cache.json
+
+# Development utilities
+.prettierrc
+.eslintrc*
+```
