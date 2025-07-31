@@ -9,6 +9,9 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
+# Copilot instructions
+.github
+
 # VS Code SCSS compilation artifacts
 .sass-cache/
 *.css.map
