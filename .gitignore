@@ -1,5 +1,4 @@
 # SCSS Compilation Output
-styles.css
 styles.css.map
 
 # Node.js dependencies (if using any build tools)
