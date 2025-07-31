@@ -64,6 +64,9 @@ _site/
 .api-cache/
 publications-cache.json
 
+# Other files that should not be tracked
+index_copy.html
+
 # Development utilities
 .prettierrc
 .eslintrc*
