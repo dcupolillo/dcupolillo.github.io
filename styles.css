@@ -162,13 +162,113 @@ section h1:after {
   content: "";
   top: 110%;
   height: 5px;
+<<<<<<< HEAD
   width: 180%;
+=======
+  width: 100%;
+>>>>>>> 3a8964c (Fix: Remove duplicate font imports to improve performance)
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to right, transparent, #2c4988, transparent);
   animation: fadeIn 1s ease-in-out 0.5s forwards;
 }
 
+<<<<<<< HEAD
+=======
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes pulsate {
+  0% {
+    background: linear-gradient(to right, transparent, #2c4988, transparent);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  25% {
+    background: linear-gradient(to right, transparent, #5452a6, transparent);
+    transform: scaleX(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    background: linear-gradient(to right, transparent, #2c4988, transparent);
+    transform: scaleX(1.2);
+    opacity: 0.6;
+  }
+  75% {
+    background: linear-gradient(to right, transparent, #5452a6, transparent);
+    transform: scaleX(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    background: linear-gradient(to right, transparent, #2c4988, transparent);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gmail-icon {
+  background-image: url(https://cdn.simpleicons.org/gmail/white);
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.github-icon {
+  background-image: url(https://cdn.simpleicons.org/github/white);
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.orcid-icon {
+  background-image: url(https://cdn.simpleicons.org/orcid/white);
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.linkedin-icon {
+  background-image: url(https://cdn.simpleicons.org/linkedin/white);
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+>>>>>>> 3a8964c (Fix: Remove duplicate font imports to improve performance)
 .header {
   width: 100%;
   height: 3rem;
