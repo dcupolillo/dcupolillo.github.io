@@ -157,7 +157,7 @@
                 flex: 1; // Take remaining space after sidebar
                 min-width: 500px; // Prevent shrinking too small
                 max-width: none; // Remove width constraint to allow growth
-                height: 70%;
+                height: 465px;
                 background: rgba(var.$primary-color, 0.1);
                 border-radius: 12px;
                 padding: 40px;
@@ -246,6 +246,34 @@
                     font-size: var.$font-size;
                     line-height: 1.5;
                     color: var.$text-color;
+
+                    // Custom scrollbar styling
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: rgba(var.$primary-color, 0.1);
+                        border-radius: 4px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: rgba(var.$primary-color, 0.4);
+                        border-radius: 4px;
+                        transition: background 0.3s ease;
+
+                        &:hover {
+                            background: rgba(var.$primary-color, 0.6);
+                        }
+                    }
+
+                    &::-webkit-scrollbar-thumb:active {
+                        background: rgba(var.$eminence, 0.8);
+                    }
+
+                    // Firefox scrollbar styling
+                    scrollbar-width: thin;
+                    scrollbar-color: rgba(var.$primary-color, 0.4) rgba(var.$primary-color, 0.1);
 
                     h3 {
                         color: var.$steel-pink;
