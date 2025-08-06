@@ -1,5 +1,5 @@
 @use '../abstract/variables' as var;
-@use '../animations';
+@use '../abstract/animations' as anim;
 @use '../abstract/mixins' as mx;
 
 html {
@@ -35,8 +35,10 @@ body {
         opacity: 0.4;
         z-index: -1;
         pointer-events: none;
-        mask-image: linear-gradient(to bottom, transparent 0%, transparent 75%, var.$background-color 100%);
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 75%, var.$background-color 100%);
+        mask-image: linear-gradient(
+          to bottom, transparent 0%, transparent 75%, var.$background-color 100%);
+        -webkit-mask-image: linear-gradient(
+          to bottom, transparent 0%, transparent 75%, var.$background-color 100%);
     }
 }
 
@@ -109,7 +111,7 @@ section {
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(to right, transparent, var.$primary-color, transparent);
-      @include animations.appearance(fadeIn, 1s, ease-in-out, 0.5s);
+      @include anim.appearance(fadeIn, 1s, ease-in-out, 0.5s);
     }
   }
 }

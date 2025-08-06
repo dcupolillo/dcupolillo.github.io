@@ -1,5 +1,5 @@
 @use '../abstract/variables' as var;
-@use '../animations';
+@use '../abstract/animations' as anim;
 @use '../abstract/mixins' as mx;
 @use '../components/icons';
 
@@ -15,9 +15,9 @@
     justify-content: center;
   
     .glass-container {
+      @include mx.flex-center(column);
       width: auto;
       max-width: 60%;
-      @include mx.flex-center(column);
       background: radial-gradient(
         circle,
         rgba(0, 0, 0, 1) 0%, 

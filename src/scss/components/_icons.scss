@@ -15,6 +15,24 @@
   transition: all 0.3s ease-in-out;
 }
 
+@mixin icon-local(
+  $path,
+  $size,
+  $apply-filter: true
+) {
+  background-image: url($path);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  
+  @if $apply-filter {
+    filter: brightness(0) invert(1);
+  }
+}
 
 @mixin flag(
   $country-code,

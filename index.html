@@ -36,7 +36,7 @@
         </div>
         <div class="nav__social">
           <a href="https://github.com/dcupolillo" class="nav__social-icon github-icon" aria-label="GitHub" target="_blank"></a>
-          <a href="https://linkedin.com/dariocupolillo" class="nav__social-icon linkedin-icon" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://linkedin.com/dariocupolillo" class="nav__social-icon linkedin-icon" aria-label="LinkedIn" target="_blank"></a>
           <a href="mailto:dario.cupolillo@gmail.com" class="nav__social-icon gmail-icon" aria-label="Gmail" target="_blank"></a>
           <a href="https://orcid.org/0000-0002-1517-3815" class="nav__social-icon orcid-icon" aria-label="ORCID" target="_blank"></a>
         </div>
@@ -51,8 +51,17 @@
       <h1>About</h1>
     </section>
     
-    <section id="projects">
-      <h1>Projects</h1>
+    <!-- Add this section where you want projects to appear -->
+    <section id="projects" class="projects-section">
+        <div class="glass-container">
+            <h1>Projects</h1>
+            <div class="projects-container" id="github-projects">
+                <div class="loading">
+                    <div class="loader"></div>
+                    Loading projects...
+                </div>
+            </div>
+        </div>
     </section>
     
     <section id="history" class="history-section">
@@ -156,15 +165,23 @@
     </section>
     
     <section id="publications" class="publication-section">
-      <div class="publications-container">
-        <h2 class="section-title">Publications</h2>
-        <div id="publications-content" class="loading">Loading publications...</div>
+      <div class="glass-container">
+        <h1>Publications</h1>
+        <div class="publication-container">
+          <div id="publications-content" class="loading">
+            <div class="loader"></div>
+            Loading publications...
+          </div>
+        </div>
       </div>
     </section>
 
+    <script src="js/Publication.js"></script>
+    <script src="js/ParseBibtex.js"></script>
+    <script src="js/getOrcidPubs.js"></script>
+    <script src="js/getGitHubRepos.js"></script>
     <script src="js/script.js"></script>
     <script src="js/history.js"></script>
-    <script src="js/getOrcidPubs.js"></script>
     
   </body>
 </html>

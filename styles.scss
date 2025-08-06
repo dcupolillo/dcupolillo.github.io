@@ -1,6 +1,7 @@
 // Abstract layer first (variables and mixins)
 @use 'src/scss/abstract/variables' as var;
 @use 'src/scss/abstract/mixins' as mx;
+@use 'src/scss/abstract/animations' as anim;
 
 // Base layer
 @use 'src/scss/base/base';
@@ -9,7 +10,6 @@
 
 // Components layer
 @use 'src/scss/components/icons';
-@use 'src/scss/animations';
 @use 'src/scss/components/navbar';
 
 // Sections layer
