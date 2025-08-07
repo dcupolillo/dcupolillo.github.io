@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const historyButtons = document.querySelectorAll('.history-button');
-    const historyDetails = document.querySelector('.history-details');
+    const experienceButtons = document.querySelectorAll('.experience-button');
+    const experienceDetails = document.querySelector('.experience-details');
     
-    // History data following your project's data structure patterns
-    const historyData = {
+    // Experience data following your project's data structure patterns
+    const experienceData = {
         'position-1': {
             date: '2021 - Present',
             title: 'Postdoctoral Researcher',
@@ -72,21 +72,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    historyButtons.forEach(button => {
+    experienceButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Remove active class from all buttons (following your BEM-inspired patterns)
-            historyButtons.forEach(btn => btn.classList.remove('active'));
+            experienceButtons.forEach(btn => btn.classList.remove('active'));
             
             // Add active class to clicked button
             this.classList.add('active');
             
             // Get position data
             const positionId = this.dataset.position;
-            const data = historyData[positionId];
+            const data = experienceData[positionId];
             
             if (data) {
                 // Update details content with consistent styling structure
-                historyDetails.innerHTML = `
+                experienceDetails.innerHTML = `
                     <div class="details-header">
                         <div class="details-date">${data.date}</div>
                         <div class="details-title">${data.title}</div>
@@ -104,13 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 
                 // Add content visible class following your component patterns
-                historyDetails.classList.add('content-visible');
+                experienceDetails.classList.add('content-visible');
             }
         });
     });
     
     // Auto-select first position on load (following your UX patterns)
-    if (historyButtons.length > 0) {
-        historyButtons[0].click();
+    if (experienceButtons.length > 0) {
+        experienceButtons[0].click();
     }
 });

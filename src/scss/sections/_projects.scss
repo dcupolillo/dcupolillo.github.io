@@ -16,7 +16,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 40px;
-            color: var.$primary-color;
+            color: var.$text-color;
             text-align: center;
             position: relative;
 
@@ -28,8 +28,8 @@
                 left: 0%;
                 width: 100%;
                 transform: translateX(0%);
-                background: linear-gradient(to right, transparent, var.$primary-color, transparent);
-                animation: pulsate 2s infinite;
+                background: linear-gradient(
+                    to right, transparent, var.$primary-color, transparent);
             }
         }
 

@@ -288,6 +288,7 @@ section h1:after {
   display: block;
   color: white;
   font-size: 0.938rem;
+  margin-right: 1rem;
 }
 @media screen and (max-width: 768px) {
   .nav__profile .nav__name {
@@ -523,7 +524,7 @@ section h1:after {
 .projects-section .glass-container h1 {
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #2c4988;
+  color: #eae9f1;
   text-align: center;
   position: relative;
 }
@@ -536,7 +537,6 @@ section h1:after {
   width: 100%;
   transform: translateX(0%);
   background: linear-gradient(to right, transparent, #2c4988, transparent);
-  animation: pulsate 2s infinite;
 }
 .projects-section .glass-container .projects-container {
   width: 100%;
@@ -889,7 +889,7 @@ section h1:after {
   margin: 1em 0 0 0.75em;
 }
 
-.history-section {
+.experience-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -899,7 +899,7 @@ section h1:after {
   color: #eae9f1;
   font-family: "Inter", sans-serif;
 }
-.history-section .glass-container {
+.experience-section .glass-container {
   width: 1200px;
   height: 1000px;
   max-width: 95%;
@@ -908,7 +908,7 @@ section h1:after {
   align-items: center;
   flex-direction: column;
 }
-.history-section .glass-container h1 {
+.experience-section .glass-container h1 {
   font-size: 2.5em;
   margin-bottom: 40px;
   position: relative;
@@ -916,7 +916,7 @@ section h1:after {
   width: -moz-max-content;
   width: max-content;
 }
-.history-section .glass-container h1:after {
+.experience-section .glass-container h1:after {
   position: absolute;
   content: "";
   top: 110%;
@@ -926,7 +926,7 @@ section h1:after {
   transform: translateX(0%);
   background: linear-gradient(to right, transparent, #2c4988, transparent);
 }
-.history-section .glass-container .history-content {
+.experience-section .glass-container .experience-content {
   display: flex;
   gap: 30px;
   width: 100%;
@@ -935,19 +935,19 @@ section h1:after {
   min-width: 800px;
 }
 @media screen and (max-width: 1024px) {
-  .history-section .glass-container .history-content {
+  .experience-section .glass-container .experience-content {
     min-width: 700px;
   }
 }
 @media screen and (max-width: 768px) {
-  .history-section .glass-container .history-content {
+  .experience-section .glass-container .experience-content {
     flex-direction: column;
     gap: 20px;
     min-width: unset;
     width: 100%;
   }
 }
-.history-section .glass-container .history-content .history-sidebar {
+.experience-section .glass-container .experience-content .experience-sidebar {
   flex: 0 0 320px;
   min-width: 320px;
   max-height: 500px;
@@ -956,7 +956,7 @@ section h1:after {
   gap: 15px;
 }
 @media screen and (max-width: 768px) {
-  .history-section .glass-container .history-content .history-sidebar {
+  .experience-section .glass-container .experience-content .experience-sidebar {
     flex: none;
     flex-direction: row;
     overflow-x: auto;
@@ -966,7 +966,7 @@ section h1:after {
     max-height: unset;
   }
 }
-.history-section .glass-container .history-content .history-sidebar .history-button {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button {
   border: 2px solid transparent;
   border-radius: 12px;
   padding: 20px;
@@ -977,27 +977,27 @@ section h1:after {
   animation: fadeInFromBottom 0.8s ease-out forwards;
 }
 @media screen and (max-width: 768px) {
-  .history-section .glass-container .history-content .history-sidebar .history-button {
+  .experience-section .glass-container .experience-content .experience-sidebar .experience-button {
     min-width: 250px;
     flex-shrink: 0;
   }
 }
-.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(1) {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button:nth-child(1) {
   animation-delay: 0.1s;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(2) {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button:nth-child(2) {
   animation-delay: 0.2s;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(3) {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button:nth-child(3) {
   animation-delay: 0.3s;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(4) {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button:nth-child(4) {
   animation-delay: 0.4s;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button:nth-child(5) {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button:nth-child(5) {
   animation-delay: 0.5s;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button .button-date {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button .button-date {
   font-size: 0.813rem;
   color: #2c4988;
   font-weight: bold;
@@ -1005,21 +1005,21 @@ section h1:after {
   margin-bottom: 10px;
   line-height: 1;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button .button-title {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button .button-title {
   font-size: 1.1em;
   font-weight: bold;
   color: #eae9f1;
   margin-bottom: 10px;
   line-height: 1.5;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button .button-organization {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button .button-organization {
   font-size: 0.813rem;
   color: #2c4988;
   font-weight: 500;
   margin-bottom: 12px;
   line-height: 1.2;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button .button-location {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button .button-location {
   font-size: 0.813rem;
   color: #eae9f1;
   opacity: 0.8;
@@ -1028,7 +1028,7 @@ section h1:after {
   gap: 6px;
   line-height: 1.2;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button .button-location::before {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button .button-location::before {
   background-image: url(https://cdn.simpleicons.org/googlemaps/white);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1040,20 +1040,20 @@ section h1:after {
   content: "";
   flex-shrink: 0;
 }
-.history-section .glass-container .history-content .history-sidebar .history-button:hover {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button:hover {
   transform: translateY(-3px) scale(1.02);
   border-color: #2c4988;
   background: rgba(44, 73, 136, 0.2);
 }
-.history-section .glass-container .history-content .history-sidebar .history-button.active {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button.active {
   border-color: #632885;
   background: rgba(44, 73, 136, 0.2);
   transform: translateY(-3px);
 }
-.history-section .glass-container .history-content .history-sidebar .history-button.active .button-title {
+.experience-section .glass-container .experience-content .experience-sidebar .experience-button.active .button-title {
   color: #b704bb;
 }
-.history-section .glass-container .history-content .history-details {
+.experience-section .glass-container .experience-content .experience-details {
   flex: 1;
   min-width: 500px;
   max-width: none;
@@ -1068,12 +1068,12 @@ section h1:after {
   overflow: hidden;
 }
 @media screen and (max-width: 1024px) {
-  .history-section .glass-container .history-content .history-details {
+  .experience-section .glass-container .experience-content .experience-details {
     min-width: 400px;
   }
 }
 @media screen and (max-width: 768px) {
-  .history-section .glass-container .history-content .history-details {
+  .experience-section .glass-container .experience-content .experience-details {
     flex: 1;
     width: 100%;
     min-width: unset;
@@ -1082,45 +1082,45 @@ section h1:after {
     padding: 25px;
   }
 }
-.history-section .glass-container .history-content .history-details .details-header {
+.experience-section .glass-container .experience-content .experience-details .details-header {
   flex-shrink: 0;
   margin-bottom: 20px;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-date {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-date {
   font-size: 0.938rem;
   color: #2c4988;
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 8px;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-title {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-title {
   font-size: 1.4em;
   font-weight: bold;
   color: #eae9f1;
   margin-bottom: 8px;
   line-height: 1.3;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-organization {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-organization {
   font-size: 0.938rem;
   color: #2c4988;
   font-weight: 500;
   margin-bottom: 8px;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-organization a {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-organization a {
   color: #2c4988;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   border-bottom: 1px solid transparent;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-organization a:hover {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-organization a:hover {
   color: #d2d2d2;
   transform: translateY(-1px);
 }
-.history-section .glass-container .history-content .history-details .details-header .details-organization a:focus {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-organization a:focus {
   outline: 2px solid #2c4988;
   outline-offset: 2px;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-location {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-location {
   font-size: 0.938rem;
   color: #eae9f1;
   opacity: 0.8;
@@ -1128,7 +1128,7 @@ section h1:after {
   align-items: center;
   gap: 6px;
 }
-.history-section .glass-container .history-content .history-details .details-header .details-location::before {
+.experience-section .glass-container .experience-content .experience-details .details-header .details-location::before {
   background-image: url(https://cdn.simpleicons.org/googlemaps/white);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1140,7 +1140,7 @@ section h1:after {
   content: "";
   flex-shrink: 0;
 }
-.history-section .glass-container .history-content .history-details .details-description {
+.experience-section .glass-container .experience-content .experience-details .details-description {
   flex: 1;
   overflow-y: auto;
   font-size: 0.938rem;
@@ -1149,38 +1149,38 @@ section h1:after {
   scrollbar-width: thin;
   scrollbar-color: rgba(44, 73, 136, 0.4) rgba(44, 73, 136, 0.1);
 }
-.history-section .glass-container .history-content .history-details .details-description::-webkit-scrollbar {
+.experience-section .glass-container .experience-content .experience-details .details-description::-webkit-scrollbar {
   width: 8px;
 }
-.history-section .glass-container .history-content .history-details .details-description::-webkit-scrollbar-track {
+.experience-section .glass-container .experience-content .experience-details .details-description::-webkit-scrollbar-track {
   background: rgba(44, 73, 136, 0.1);
   border-radius: 4px;
 }
-.history-section .glass-container .history-content .history-details .details-description::-webkit-scrollbar-thumb {
+.experience-section .glass-container .experience-content .experience-details .details-description::-webkit-scrollbar-thumb {
   background: rgba(44, 73, 136, 0.4);
   border-radius: 4px;
   -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
-.history-section .glass-container .history-content .history-details .details-description::-webkit-scrollbar-thumb:hover {
+.experience-section .glass-container .experience-content .experience-details .details-description::-webkit-scrollbar-thumb:hover {
   background: rgba(44, 73, 136, 0.6);
 }
-.history-section .glass-container .history-content .history-details .details-description::-webkit-scrollbar-thumb:active {
+.experience-section .glass-container .experience-content .experience-details .details-description::-webkit-scrollbar-thumb:active {
   background: rgba(99, 40, 133, 0.8);
 }
-.history-section .glass-container .history-content .history-details .details-description h3 {
+.experience-section .glass-container .experience-content .experience-details .details-description h3 {
   color: #b704bb;
   font-size: 1.1em;
   margin: 20px 0 10px 0;
   font-weight: 600;
 }
-.history-section .glass-container .history-content .history-details .details-description ul {
+.experience-section .glass-container .experience-content .experience-details .details-description ul {
   margin-left: 20px;
   margin-bottom: 15px;
   list-style-type: disc;
   padding-left: 0;
 }
-.history-section .glass-container .history-content .history-details .details-description ul li {
+.experience-section .glass-container .experience-content .experience-details .details-description ul li {
   margin-bottom: 5px;
   color: #eae9f1;
   opacity: 0.9;
@@ -1188,12 +1188,12 @@ section h1:after {
   margin-left: 0;
   padding-left: 0;
 }
-.history-section .glass-container .history-content .history-details .details-description p {
+.experience-section .glass-container .experience-content .experience-details .details-description p {
   margin-bottom: 15px;
   color: #eae9f1;
   opacity: 0.9;
 }
-.history-section .glass-container .history-content .history-details .placeholder-content {
+.experience-section .glass-container .experience-content .experience-details .placeholder-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1201,21 +1201,21 @@ section h1:after {
   flex: 1;
   opacity: 0.6;
 }
-.history-section .glass-container .history-content .history-details .placeholder-content .placeholder-icon {
+.experience-section .glass-container .experience-content .experience-details .placeholder-content .placeholder-icon {
   font-size: 3em;
   margin-bottom: 20px;
 }
-.history-section .glass-container .history-content .history-details .placeholder-content .placeholder-text {
+.experience-section .glass-container .experience-content .experience-details .placeholder-content .placeholder-text {
   color: #eae9f1;
   font-size: 0.938rem;
   opacity: 0.7;
   text-align: center;
 }
 @media screen and (max-width: 768px) {
-  .history-section .glass-container {
+  .experience-section .glass-container {
     max-width: 95%;
   }
-  .history-section .glass-container h1 {
+  .experience-section .glass-container h1 {
     font-size: 2em;
     margin-bottom: 30px;
   }
@@ -1242,7 +1242,7 @@ section h1:after {
 .publication-section .glass-container h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: #2c4988;
+  color: #eae9f1;
   text-align: center;
   position: relative;
 }
