@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
   
-    .glass-container {
+    .about-container {
       @include mx.flex-center(column);
       width: auto;
       max-width: 60%;
@@ -28,21 +28,9 @@
         font-family: inherit;
         font-size: 2.5em;
         margin-bottom: 20px;
-        position: relative;
         text-align: center;
         width: max-content;
         text-transform: uppercase; 
-  
-        &:after {
-          position: absolute;
-          content: "";
-          top: 110%;
-          height: 5px;
-          left: 0%;
-          width: 100%;
-          transform: translateX(0%);
-          background: linear-gradient(to right, transparent, var.$primary-color, transparent);
-        }
       }
   
       .about-me-content {

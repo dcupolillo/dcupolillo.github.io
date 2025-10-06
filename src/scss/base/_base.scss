@@ -101,17 +101,5 @@ section {
     position: relative;
     text-align: center;
     width: max-content;
-
-    &:after {
-      position: absolute;
-      content: "";
-      top: 110%;
-      height: 5px;
-      width: 180%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(to right, transparent, var.$primary-color, transparent);
-      @include anim.appearance(fadeIn, 1s, ease-in-out, 0.5s);
-    }
   }
 }

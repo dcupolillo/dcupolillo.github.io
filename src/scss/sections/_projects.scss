@@ -8,7 +8,7 @@
     color: var.$text-color;
     font-family: var.$font-family;
 
-    .glass-container {
+    .projects-container {
         width: 1200px;
         max-width: 95%;
         @include mx.flex-center(column);
@@ -18,19 +18,6 @@
             margin-bottom: 40px;
             color: var.$text-color;
             text-align: center;
-            position: relative;
-
-            &:after {
-                position: absolute;
-                content: "";
-                top: 110%;
-                height: 5px;
-                left: 0%;
-                width: 100%;
-                transform: translateX(0%);
-                background: linear-gradient(
-                    to right, transparent, var.$primary-color, transparent);
-            }
         }
 
         .projects-container {

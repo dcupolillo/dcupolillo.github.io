@@ -17,21 +17,8 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 40px;
-            position: relative;
             text-align: center;
             width: max-content;
-
-            &:after {
-                position: absolute;
-                content: "";
-                top: 110%;
-                height: 5px;
-                left: 0%;
-                width: 100%;
-                transform: translateX(0%);
-                background: linear-gradient(
-                    to right, transparent, var.$primary-color, transparent);
-            }
         }
 
         .skills-grid {

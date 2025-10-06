@@ -10,7 +10,7 @@
     color: var.$text-color;
     font-family: var.$font-family;
 
-    .glass-container {
+    .experience-container {
         width: 1200px;
         height: 1000px;
         max-width: 95%;
@@ -19,21 +19,8 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 40px;
-            position: relative;
             text-align: center;
             width: max-content;
-
-            &:after {
-                position: absolute;
-                content: "";
-                top: 110%;
-                height: 5px;
-                left: 0%;
-                width: 100%;
-                transform: translateX(0%);
-                background: linear-gradient(
-                    to right, transparent, var.$primary-color, transparent);
-            }
         }
 
         .experience-content {
@@ -325,7 +312,7 @@
     }
 
     @media screen and (max-width: 768px) {
-        .glass-container {
+        .experience-container {
             max-width: 95%;
             
             h1 {

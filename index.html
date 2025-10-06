@@ -31,8 +31,7 @@
             <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
             <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
             <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-            <li class="nav__item"><a href="#publications" class="nav__link">Publications</a></li> 
-            <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+            <li class="nav__item"><a href="#publications" class="nav__link">Publications</a></li>
           </ul>
         </div>
         <div class="nav__social">
@@ -45,7 +44,35 @@
     </header>
 
     <section id="home">
-      <h1>Home</h1>
+      <div class="home-container">
+        <div class="home-layout">
+          <div class="home-left">
+            <img src="src/assets/portrait.png" alt="Dario Cupolillo" class="home-photo" />
+          </div>
+          
+          <div class="home-right">
+            <div class="home-content">
+              <h1>Dario Cupolillo</h1>
+              <div class="profession">Postdoc | Data analyst</div>
+              <p class="tagline">
+                Exploring the spatial organization
+                of dendritic spines of neurons
+                through advanced imaging and analysis. 
+                Passionate about data, analysis, visualization.
+              </p>
+            </div>
+            
+            <div class="home-actions">
+              <a href="src/assets/DarioCupolillo_Resume.pdf" target="_blank" class="btn btn-primary">
+                Download CV
+              </a>
+              <a href="#about" class="btn btn-secondary">
+                About Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     
     <section id="about">
@@ -54,7 +81,7 @@
     
     <!-- Add this section where you want projects to appear -->
     <section id="projects" class="projects-section">
-        <div class="glass-container">
+        <div class="projects-container">
             <h1>Projects</h1>
             <div class="projects-container" id="github-projects">
                 <div class="loading">
@@ -65,12 +92,12 @@
         </div>
     </section>
     
-    <section id="history" class="history-section">
-      <div class="glass-container">
-        <h1>History</h1>
-        <div class="history-content">
-          <div class="history-sidebar">
-            <div class="history-button" data-position="position-1">
+    <section id="experience" class="experience-section">
+      <div class="experience-container">
+        <h1>Experience</h1>
+        <div class="experience-content">
+          <div class="experience-sidebar">
+            <div class="experience-button" data-position="position-1">
               <div class="button-date">2021 - Present</div>
               <div class="button-title">Postdoctoral Researcher</div>
               <div class="button-organization">Italian Institute of Technology</div>
@@ -79,7 +106,7 @@
               </div>
             </div>
             
-            <div class="history-button" data-position="position-2">
+            <div class="experience-button" data-position="position-2">
               <div class="button-date">2016 - 2021</div>
               <div class="button-title">Ph.D. in Neuroscience</div>
               <div class="button-organization">Interdisciplinary Institute for Neuroscience</div>
@@ -88,7 +115,7 @@
               </div>
             </div>
             
-            <div class="history-button" data-position="position-3">
+            <div class="experience-button" data-position="position-3">
               <div class="button-date">2012 - 2014</div>
               <div class="button-title">M.Sc. in Molecular Biotechnology</div>
               <div class="button-organization">University of Turin</div>
@@ -98,7 +125,7 @@
             </div>
           </div>
           
-          <div class="history-details">
+          <div class="experience-details">
             <div class="placeholder-content">
               <div class="placeholder-icon">📚</div>
               <div class="placeholder-text">Select a position to view details</div>
@@ -166,57 +193,13 @@
     </section>
     
     <section id="publications" class="publication-section">
-      <div class="glass-container">
+      <div class="publications-container">
         <h1>Publications</h1>
         <div class="publication-container">
           <div id="publications-content" class="loading">
             <div class="loader"></div>
             Loading publications...
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="experience-section">
-      <div class="glass-container">
-        <h1>Experience</h1>
-        <div class="experience-content">
-          <div class="experience-sidebar">
-            <div class="experience-button" data-position="position-1">
-              <div class="button-date">2021 - Present</div>
-              <div class="button-title">Postdoctoral Researcher</div>
-              <div class="button-organization">Italian Institute of Technology</div>
-              <div class="button-location">Genoa
-                <span class="flag-icon italy-flag"></span>
-              </div>
-            </div>
-            
-            <div class="experience-button" data-position="position-2">
-              <div class="button-date">2016 - 2021</div>
-              <div class="button-title">Ph.D. in Neuroscience</div>
-              <div class="button-organization">Interdisciplinary Institute for Neuroscience</div>
-              <div class="button-location">Bordeaux
-                <span class="flag-icon france-flag"></span>
-              </div>
-            </div>
-            
-            <div class="experience-button" data-position="position-3">
-              <div class="button-date">2012 - 2014</div>
-              <div class="button-title">M.Sc. in Molecular Biotechnology</div>
-              <div class="button-organization">University of Turin</div>
-              <div class="button-location">Turin, Italy
-                <span class="flag-icon italy-flag"></span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="experience-details">
-            <div class="placeholder-content">
-              <div class="placeholder-icon">📚</div>
-              <div class="placeholder-text">Select a position to view details</div>
-            </div>
-          </div>
-          
         </div>
       </div>
     </section>

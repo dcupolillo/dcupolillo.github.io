@@ -12,15 +12,14 @@ closeMenu.addEventListener('click', () => {
 
 const navLink = document.querySelectorAll('.nav__link')
 
-function linkAction() {
-    // Active link
-    navLink.forEach(n => n.classList.remove('active'))
-    this.classList.add('active')
-
+function linkAction(e) {
     // Remove menu mobile
     if (navMenu) {
         navMenu.classList.remove('show');
     }
+    
+    // Let scroll spy handle the active state naturally
+    // The active class will be updated by scroll spy after smooth scroll
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -63,4 +62,54 @@ document.addEventListener('DOMContentLoaded', function() {
             projectsContainer.innerHTML = '<div class="error">GitHub integration not available</div>';
         }
     }
+
+    // Scroll-based navbar highlighting
+    initScrollSpy();
 });
+
+// Scroll spy functionality for navbar highlighting
+function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__link[href^="#"]');
+    
+    // Function to update active nav link
+    function updateActiveNavLink() {
+        let scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100; // 100px offset for better UX
+            const sectionId = section.getAttribute('id');
+            const correspondingNavLink = document.querySelector(`.nav__link[href="#${sectionId}"]`);
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                // Remove active class from all nav links
+                navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to current section's nav link
+                if (correspondingNavLink) {
+                    correspondingNavLink.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Throttle scroll events for better performance
+    let ticking = false;
+    
+    function handleScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateActiveNavLink();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial call to set active state on page load
+    updateActiveNavLink();
+}
