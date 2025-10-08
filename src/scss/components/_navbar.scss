@@ -97,6 +97,8 @@
             width: 56px;
             height: 56px;
             margin-bottom: 0.8rem;
+            margin-left: 0;
+            margin-right: auto;
         }
     }
 
@@ -107,16 +109,18 @@
         margin-right: 0.8rem;
 
         @media screen and (max-width: 768px) {
-        text-align: center;
+        text-align: left;
         }
     }
 
     .nav__position {
         font-size: var.$small-font-size;
         color: var.$primary-color;
+        
 
         @media screen and (min-width: 768px) {
             display: none;
+            text-align: left;
         }
     }
 }

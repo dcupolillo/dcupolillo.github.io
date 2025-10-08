@@ -21,6 +21,11 @@
             margin-bottom: 40px;
             text-align: center;
             width: max-content;
+
+            @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            }
         }
 
         .experience-content {

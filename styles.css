@@ -271,6 +271,8 @@ section h1 {
     width: 56px;
     height: 56px;
     margin-bottom: 0.8rem;
+    margin-left: 0;
+    margin-right: auto;
   }
 }
 .nav__profile .nav__name {
@@ -281,7 +283,7 @@ section h1 {
 }
 @media screen and (max-width: 768px) {
   .nav__profile .nav__name {
-    text-align: center;
+    text-align: left;
   }
 }
 .nav__profile .nav__position {
@@ -291,6 +293,7 @@ section h1 {
 @media screen and (min-width: 768px) {
   .nav__profile .nav__position {
     display: none;
+    text-align: left;
   }
 }
 
@@ -436,14 +439,12 @@ section h1 {
   border-radius: 25%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 1px solid #2c4988;
-  box-shadow: 0 15px 35px rgba(44, 73, 136, 0.3);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: fadeInFromBottom 1s ease-out;
 }
 #home .home-container .home-layout .home-left .home-photo:hover {
   transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(44, 73, 136, 0.4);
+  box-shadow: 0 8px 24px rgba(44, 73, 136, 0.18);
 }
 #home .home-container .home-layout .home-right {
   flex: 1;
@@ -469,11 +470,12 @@ section h1 {
   animation: fadeInFromBottom 1s ease-out 0.4s both;
 }
 #home .home-container .home-layout .home-right .home-content .tagline {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #eae9f1;
   line-height: 1.6;
   opacity: 0.9;
   max-width: 500px;
+  font-weight: 300;
   animation: fadeInFromBottom 1s ease-out 0.6s both;
 }
 #home .home-container .home-layout .home-right .home-actions {
@@ -524,18 +526,19 @@ section h1 {
   content: "👋";
   font-size: 1.1rem;
 }
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   #home .home-container .home-layout {
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
     text-align: center;
   }
   #home .home-container .home-layout .home-left {
     order: 1;
   }
   #home .home-container .home-layout .home-left .home-photo {
-    width: 220px;
-    height: 220px;
+    margin-top: 20%;
+    width: 150px;
+    height: 150px;
   }
   #home .home-container .home-layout .home-right {
     order: 2;
@@ -547,6 +550,10 @@ section h1 {
   #home .home-container .home-layout .home-right .home-content h1 {
     font-size: 2.8rem;
     text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #home .home-container .home-layout .home-right .home-content .profession {
     font-size: 1.5rem;
@@ -560,10 +567,10 @@ section h1 {
     flex-wrap: wrap;
   }
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #home .home-container .home-layout {
     flex-direction: column;
-    gap: 2rem;
+    gap: 0rem;
     align-items: center;
     text-align: center;
   }
@@ -574,8 +581,9 @@ section h1 {
     justify-content: center;
   }
   #home .home-container .home-layout .home-left .home-photo {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
+    margin-top: 0;
   }
   #home .home-container .home-layout .home-right {
     order: 2;
@@ -588,33 +596,39 @@ section h1 {
     text-align: center;
   }
   #home .home-container .home-layout .home-right .home-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    margin-top: 0.5rem;
   }
   #home .home-container .home-layout .home-right .home-content .profession {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-align: center;
   }
   #home .home-container .home-layout .home-right .home-content .tagline {
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: center;
-    max-width: 100%;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
   }
   #home .home-container .home-layout .home-right .home-actions {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   #home .home-container .home-layout .home-right .home-actions .btn {
     justify-content: center;
     width: 100%;
-    max-width: 280px;
+    max-width: 220px;
     text-align: center;
   }
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #home {
     padding: 1rem;
   }
@@ -652,6 +666,12 @@ section h1 {
   width: -moz-max-content;
   width: max-content;
   text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .about-me-section .about-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
 }
 .about-me-section .about-container .about-me-content {
   display: flex;
@@ -708,6 +728,14 @@ section h1 {
   color: #eae9f1;
   font-family: "Inter", sans-serif;
 }
+@media screen and (max-height: 400px) {
+  .projects-section {
+    min-height: 60vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
 .projects-section .projects-container {
   width: 1200px;
   max-width: 95%;
@@ -722,12 +750,31 @@ section h1 {
   color: #eae9f1;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .projects-section .projects-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
+}
 .projects-section .projects-container .projects-container {
   width: 100%;
   max-width: 800px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .projects-section .projects-container .projects-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+@media screen and (max-height: 600px) {
+  .projects-section .projects-container .projects-container {
+    max-height: 400px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 .projects-section .projects-container .projects-container .loading {
   display: flex;
@@ -773,6 +820,15 @@ section h1 {
   transition: all 0.3s ease-in-out;
   opacity: 0;
   animation: fadeInFromBottom 0.6s ease-out forwards;
+}
+@media screen and (max-height: 600px) {
+  .projects-section .projects-container .projects-container .project {
+    max-height: 400px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 8px;
+  }
 }
 .projects-section .projects-container .projects-container .project:hover {
   transform: translateY(-5px);
@@ -929,6 +985,12 @@ section h1 {
   text-align: center;
   width: -moz-max-content;
   width: max-content;
+}
+@media screen and (max-width: 768px) {
+  .experience-section .experience-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
 }
 .experience-section .experience-container .experience-content {
   display: flex;

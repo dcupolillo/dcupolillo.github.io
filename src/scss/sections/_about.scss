@@ -31,7 +31,14 @@
         text-align: center;
         width: max-content;
         text-transform: uppercase; 
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.5em;
+          margin-bottom: 15px;
+        }
       }
+
+      
   
       .about-me-content {
         @include mx.flex-center(row);

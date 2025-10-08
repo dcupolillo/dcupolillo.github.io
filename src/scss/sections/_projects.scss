@@ -8,6 +8,13 @@
     color: var.$text-color;
     font-family: var.$font-family;
 
+    @media screen and (max-height: 400px) {
+        min-height: 60vh;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
     .projects-container {
         width: 1200px;
         max-width: 95%;
@@ -18,6 +25,11 @@
             margin-bottom: 40px;
             color: var.$text-color;
             text-align: center;
+
+            @media screen and (max-width: 768px) {
+                font-size: 1.5em;
+                margin-bottom: 25px;
+            }
         }
 
         .projects-container {
@@ -26,6 +38,17 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            @media screen and (max-height: 600px) {
+                max-height: 400px;
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
 
             .loading {
                 @include mx.flex-center(column);
@@ -71,6 +94,14 @@
                 @include mx.transition(all, 0.3s, ease-in-out);
                 opacity: 0;
                 animation: fadeInFromBottom 0.6s ease-out forwards;
+
+                @media screen and (max-height: 600px) {
+                    max-height: 400px;
+                    grid-template-columns: 1fr;
+                    gap: 15px;
+                    padding: 12px;
+                    border-radius: 8px;
+                }
 
                 &:hover {
                     transform: translateY(-5px);
