@@ -3,6 +3,128 @@
 @use '../abstract/mixins' as mx;
 @use '../components/icons';
 
+// Experience Modal Dialog (mobile only)
+.experience-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 80vh;
+    @include mx.flex-center();
+    padding: 20px;
+}
+
+.experience-modal-content {
+
+    .details-date {
+        color: var.$primary-color;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .details-title {
+        color: var.$text-color;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    .details-organization {
+        color: var.$primary-color;
+        font-size: 1.1em;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }    
+
+    .details-location {
+        color: var.$text-color;
+        font-style: italic;
+        opacity: 0.8;
+        font-size: 1em;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .details-description {
+        font-size: 1em;
+        line-height: 1.5;
+        color: var.$text-color;
+        max-height: 50vh;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(var.$primary-color, 0.1);
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(var.$primary-color, 0.4);
+            border-radius: 4px;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: rgba(var.$primary-color, 0.6);
+            }
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background: rgba(var.$eminence, 0.8);
+        }
+
+        scrollbar-width: thin;
+        scrollbar-color: rgba(var.$primary-color, 0.4) rgba(var.$primary-color, 0.1);
+    }
+
+    h3 {
+        color: var.$steel-pink;
+        font-size: 1.1em;
+        margin: 20px 0 10px 0;
+        font-weight: 600;
+    }
+
+    background: var.$background-color;
+    color: var.$text-color;
+    border-radius: 16px;
+    max-width: 95vw;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 60px 40px 40px 40px;
+    position: relative;
+    animation: fadeInFromBottom 0.4s ease;
+}
+
+.experience-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2em;
+    color: var.$primary-color;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+    &:hover {
+        color: var.$steel-pink;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .experience-modal {
+        display: none !important;
+    }
+}
 .experience-section {
     @include mx.flex-center(column);
     min-height: 100vh;
@@ -12,58 +134,59 @@
 
     .experience-container {
         width: 1000px;
-        height: 1000px;
+        height: 700px;
         max-width: 95%;
         padding-top: 50px;
         @include mx.flex-center(column);
+
+        @media screen and (max-width: 768px) {
+            max-width: 95%;
+        }
         
         h1 {
-            font-size: 2.5em;
+            font-size: 1.5em;
             margin-bottom: 40px;
             text-align: center;
             width: max-content;
 
-            @media screen and (max-width: 768px) {
-            font-size: 1.5em;
-            margin-bottom: 15px;
+            @media screen and (min-width: 768px) {
+                font-size: 1.8em;
+                margin-bottom: 30px;
             }
         }
 
         .experience-content {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
             width: 100%;
             height: 100%;
-            max-width: 1400px;
-            min-width: 800px;
-            
-            @media screen and (max-width: 1024px) {
+    
+            @media screen and (min-width: 769px) {
+                flex-direction: row;
+                gap: 30px;
+                max-width: 1400px;
+                min-width: 800px;
+            }
+            @media screen and (min-width: 1025px) {
                 min-width: 700px;
             }
 
-            @media screen and (max-width: 768px) {
-                flex-direction: column;
-                gap: 20px;
-                min-width: unset;
-                width: 100%;
-            }
-
             .experience-sidebar {
-                flex: 0 0 320px;
-                min-width: 320px;
-                max-height: 500px;
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
+                width: 100%;
+                max-width: 300px;
+                min-width: unset;
+                max-height: unset;
+                flex: none;
 
-                @media screen and (max-width: 768px) {
-                    flex: none;
-                    flex-direction: row;
-                    overflow-x: auto;
-                    overflow-y: hidden;
-                    padding-bottom: 10px;
-                    min-width: unset;
-                    max-height: unset;
+                @media screen and (min-width: 768px) {
+                    flex: 0 0 320px;
+                    min-width: 320px;
+                    max-height: 500px;  
                 }
 
                 .experience-button {
@@ -147,18 +270,23 @@
             }
 
             .experience-details {
-                flex: 1;
-                min-width: 500px;
-                max-width: none;
-                height: 465px;
-                background: rgba(var.$primary-color, 0.1);
-                border-radius: 12px;
-                padding: 40px;
-                display: flex;
-                flex-direction: column;
-                opacity: 0;
-                animation: fadeInFromBottom 0.8s ease-out 0.3s forwards;
-                overflow: hidden;
+                display: none;
+
+                @media screen and (min-width: 768px) {
+                    flex: 1;
+                    min-width: 500px;
+                    max-width: none;
+                    height: 465px;
+                    background: rgba(var.$primary-color, 0.1);
+                    border-radius: 12px;
+                    padding: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    opacity: 0;
+                    animation: fadeInFromBottom 0.8s ease-out 0.3s forwards;
+                    overflow: hidden;
+                }
+                
 
                 @media screen and (max-width: 1024px) {
                     min-width: 400px;
@@ -313,17 +441,6 @@
                         text-align: center;
                     }
                 }
-            }
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        .experience-container {
-            max-width: 95%;
-            
-            h1 {
-                font-size: 2em;
-                margin-bottom: 30px;
             }
         }
     }

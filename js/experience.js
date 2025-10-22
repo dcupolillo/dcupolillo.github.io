@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const experienceButtons = document.querySelectorAll('.experience-button');
     const experienceDetails = document.querySelector('.experience-details');
-    
+    const modal = document.getElementById('experience-modal');
+    const modalContent = modal ? modal.querySelector('.experience-modal-details') : null;
+    const closeBtn = modal ? modal.querySelector('.experience-modal-close') : null;
+    const isMobile = () => window.innerWidth < 769;
+
     // Experience data following your project's data structure patterns
     const experienceData = {
         'position-1': {
@@ -76,23 +80,20 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             // Remove active class from all buttons (following your BEM-inspired patterns)
             experienceButtons.forEach(btn => btn.classList.remove('active'));
-            
             // Add active class to clicked button
             this.classList.add('active');
-            
             // Get position data
             const positionId = this.dataset.position;
             const data = experienceData[positionId];
-            
             if (data) {
                 // Update details content with consistent styling structure
-                experienceDetails.innerHTML = `
+                const detailsHTML = `
                     <div class="details-header">
                         <div class="details-date">${data.date}</div>
                         <div class="details-title">${data.title}</div>
                         <div class="details-organization">
                             ${data.organizationUrl ? 
-                                `<a href="${data.organizationUrl}" target="_blank" rel="noopener noreferrer">${data.organization}</a>` : 
+                                `<a href="${data.organizationUrl}" class="details-organization" target="_blank" rel="noopener noreferrer">${data.organization}</a>` : 
                                 data.organization
                             }
                         </div>
@@ -102,15 +103,34 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${data.description}
                     </div>
                 `;
-                
-                // Add content visible class following your component patterns
-                experienceDetails.classList.add('content-visible');
+                if (isMobile() && modal && modalContent) {
+                    modalContent.innerHTML = detailsHTML;
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                } else if (experienceDetails) {
+                    experienceDetails.innerHTML = detailsHTML;
+                    experienceDetails.classList.add('content-visible');
+                }
             }
         });
     });
-    
-    // Auto-select first position on load (following your UX patterns)
-    if (experienceButtons.length > 0) {
+
+    // Modal close logic
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Only auto-select first position on desktop (not mobile)
+    if (experienceButtons.length > 0 && !isMobile()) {
         experienceButtons[0].click();
     }
 });

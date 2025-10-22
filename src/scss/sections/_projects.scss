@@ -8,40 +8,39 @@
     color: var.$text-color;
     font-family: var.$font-family;
 
-    @media screen and (max-height: 400px) {
-        min-height: 60vh;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 2.5rem;
-    }
-
     .projects-container {
-        width: 400px;
+        width: 300px;
         max-width: 75%;
         @include mx.flex-center(column);
 
+        @media screen and (min-width: 768px) {
+            width: 500px;
+            max-width: 85%;
+        }
+
+        @media screen and (min-width: 930px) {
+            width: 700px;
+            max-width: 100%;
+        }
+
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
+            font-size: 1.5em;
+            margin-bottom: 25px;
             color: var.$text-color;
             text-align: center;
 
-            @media screen and (max-width: 768px) {
-                font-size: 1.5em;
-                margin-bottom: 25px;
+            @media screen and (min-width: 768px) {
+                font-size: 1.8em;
             }
         }
 
-        .projects-container {
-            width: 75%;
-            max-width: 400px;
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
+            gap: 10px;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (min-width: 768px) {
                 grid-template-columns: 1fr;
-                gap: 15px;
             }
 
             @media screen and (max-height: 600px) {
@@ -98,7 +97,6 @@
                 @media screen and (max-height: 600px) {
                     max-height: 400px;
                     grid-template-columns: 1fr;
-                    gap: 15px;
                     padding: 12px;
                     border-radius: 8px;
                 }
@@ -110,138 +108,194 @@
                     box-shadow: 0 8px 25px rgba(var.$primary-color, 0.15);
                 }
 
-                .project-description {
-                    display: none;
-                    @media screen and (min-width: 930px) {
-                        display: block;
-                        color: rgba(var.$text-color, 0.9);
-                        line-height: 1.6;
-                        margin-bottom: 15px;
-                        font-size: 0.95em;
-                    }
-                    &:empty::before {
-                        content: "No description provided";
-                        color: rgba(var.$text-color, 0.5);
-                        font-style: italic;
-                    }
-                }
-
-                .project-left {
+                .project-main {
                     flex: 1;
                     min-width: 0; // Prevents flex item overflow
+                    position: relative;
 
-                    h3 {
-                        color: var.$primary-color;
-                        font-size: 1.3em;
-                        font-weight: 900;
-                        margin: 0 0 15px 0;
-                        text-transform: capitalize;
-                        text-align: center;
+                    @media screen and (min-width: 768px) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5em;
+                    }
 
+                    .project-row-top {
+                        
                         @media screen and (min-width: 768px) {
-                            text-align: left;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                        
+                        h3 {
+                            color: var.$primary-color;
+                            font-size: 1.3em;
+                            font-weight: 600;
+                            margin: 0 0 15px 0;
+
+                            @media screen and (min-width: 768px) {
+                                text-align: left;
+                                margin: 0;
+                            }
+                        }
+                            
+                        .project-meta {
+                            @media screen and (min-width: 768px) {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 8px;
+                                padding: 0;
+                                flex-wrap: wrap;
+                                justify-content: flex-end;
+                                align-items: center;
+                                margin: 0;
+                                position: static;
+                                height: auto;
+                                z-index: auto;
+                            }
+                        }
+                    }
+                    .project-row-bottom {
+                        display: none;
+                        
+                        @media screen and (min-width: 768px) {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                        }
+                            
+                        .project-description {
+                            display: none;
+
+                            @media screen and (min-width: 768px) {
+                                display: block;
+                            }
+                    
+                            @media screen and (min-width: 930px) {
+                                display: block;
+                                color: rgba(var.$text-color, 0.9);
+                                line-height: 1.6;
+                                margin-bottom: 0;
+                                font-size: 0.95em;
+                                flex: 1 1 60%;
+                                margin-right: 16px;
+                                min-width: 0;
+                                word-break: break-word;
+                            }
+                        }
+                            
+                        .project-topics {
+                            display: none;
+                        }
+                            
+                        .project-activity {
+                            display: none;
+                    
+                            @media screen and (min-width: 768px) {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                margin-top: 8px;
+                                margin-left: 0;
+                                padding-left: 12px;
+                                max-width: 180px;
+                                flex: 1 1 auto;
+                            }
                         }
                     }
 
-                    
-                }
+                    .project-meta {
+                        display: none;
+                        
+                        @media screen and (min-width: 768px) {
+                            display: flex;
+                        }
 
-                .project-right {
-                    flex-shrink: 0;
-                    width: 220px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 15px;
+                        .language {
+                            background: var.$violet-blue;
+                            color: white;
+                            padding: 4px 8px;
+                            border-radius: 4px;
+                            font-weight: 500;
+                            font-size: 0.8em;
+                            text-align: center;
+                        }
 
-                    @media screen and (max-width: 768px) {
-                        width: 100%;
-                        align-items: center;
-                    }
-                }
-
-                .project-meta {
-                    display: none;
-                    
-                    @media screen and (min-width: 768px) {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 8px;
-                        padding: 0;
-                        flex-wrap: wrap;
-                        justify-content: flex-start;
-                        align-items: center;
-                        margin-top: 0;
-                        margin-bottom: 0;
+                        .stars, .forks {
+                            color: var.$steel-pink;
+                            font-weight: 500;
+                            font-size: 0.85em;
+                            text-align: center;
+                            padding: 4px 8px;
+                        }
                     }
 
-                    .language {
-                        background: var.$violet-blue;
-                        color: white;
-                        padding: 4px 8px;
-                        border-radius: 4px;
-                        font-weight: 500;
-                        font-size: 0.8em;
-                        text-align: center;
+                    .project-topics {
+                        display: none;
+
+                        @media screen and (min-width: 930px) {
+                            max-width: 80px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            margin-bottom: 0;
+                            justify-content: flex-start;
+                        }
+
+                        .topic {
+                            background: rgba(var.$steel-pink, 0.2);
+                            color: var.$steel-pink;
+                            padding: 4px 10px;
+                            border-radius: 20px;
+                            font-size: 0.75em;
+                            font-weight: 500;
+                            border: 1px solid rgba(var.$steel-pink, 0.3);
+                        }
                     }
 
-                    .stars, .forks {
-                        color: var.$steel-pink;
-                        font-weight: 500;
-                        font-size: 0.85em;
-                        text-align: center;
-                        padding: 4px 8px;
-                    }
-                }
-
-                .project-topics {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 8px;
-                    margin-bottom: 0;
-                    justify-content: center;
-
-                    .topic {
-                        background: rgba(var.$steel-pink, 0.2);
-                        color: var.$steel-pink;
-                        padding: 4px 10px;
-                        border-radius: 20px;
-                        font-size: 0.75em;
-                        font-weight: 500;
-                        border: 1px solid rgba(var.$steel-pink, 0.3);
-                    }
-                }
-
-                .project-activity {
-                    display: none;
-                    @media screen and (min-width: 930px) {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        padding: 8px;
+                    .project-activity {
+                        display: none;
+                        
+                        @media screen and (min-width: 768px) {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            padding: 8px 0 0 0;
+                            max-width: 180px;
+                        }
+                        
+                        @media screen and (min-width: 930px) {
+                            align-items: center;
+                        }
 
                         .activity-label {
                             font-size: 0.75em;
-                            color: rgba(var.$text-color, 0.7);
-                            font-weight: 500;
-                            text-align: center;
-                            margin-bottom: 5px;
+                            font-weight: 400;
+                            text-align: left;
+                            margin-bottom: 20px;
+                            
+                            @media screen and (min-width: 768px) {
+                                color: rgba(var.$text-color, 0.7);
+                            }
                         }
 
                         .activity-chart {
                             display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            align-items: flex-start;
+                            justify-content: flex-start;
                             
                             &.no-data {
                                 color: rgba(var.$text-color, 0.5);
                                 font-size: 0.7em;
                                 font-style: italic;
                                 text-align: center;
+                                font-weight: 400;
                             }
 
                             svg {
-                                width: 180px;
-                                height: 30px;
+                                width: 120px;
+                                height: 20px;
                                 @include mx.transition(all, 0.3s, ease-in-out);
 
                                 polyline {

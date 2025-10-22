@@ -81,15 +81,15 @@
     
     <!-- Add this section where you want projects to appear -->
     <section id="projects" class="projects-section">
-        <div class="projects-container">
-            <h1>Projects</h1>
-            <div class="projects-container" id="github-projects">
-                <div class="loading">
-                    <div class="loader"></div>
-                    Loading projects...
-                </div>
-            </div>
+      <div class="projects-container">
+        <h1>Projects</h1>
+        <div class="projects-grid" id="github-projects">
+          <div class="loading">
+            <div class="loader"></div>
+            Loading projects...
+          </div>
         </div>
+      </div>
     </section>
     
     <section id="experience" class="experience-section">
@@ -137,7 +137,7 @@
     </section>
     
     <section id="skills" class="skills-section">
-      <div class="glass-container">
+      <div class="skills-container">
         <h1>Skills</h1>
         <div class="skills-grid">
           <div class="skill-container">
@@ -154,38 +154,12 @@
           </div>
           
           <div class="skill-container">
-            <h3 class="skill-title">Softwares</h3>
-            <ul class="skill-list">
-              <li class="anaconda" data-skill="Anaconda"></li>
-              <li class="spyder" data-skill="Spyder"></li>
-              <li class="microsoft-visual-studio" data-skill="Microsoft Visual Studio"></li>
-              <li class="git-hub" data-skill="GitHub"></li>
-              <li class="arduino" data-skill="Arduino"></li>
-              <li class="imagej" data-skill="ImageJ"></li>      
-              <li class="illustrator" data-skill="Adobe Illustrator"></li>
-              <li class="designspark-mechanical" data-skill="DesignSpark Mechanical"></li>
-            </ul>
-          </div>
-          
-          <div class="skill-container">
-            <h3 class="skill-title">Wet lab</h3>
-            <ul class="skill-list">
-              <li>Electrophysiology</li>
-              <li>Patch Clamp</li>
-              <li>Neuroimaging</li>
-              <li>Behavioral Analysis</li>
-              <li>Dendritic Spine Analysis</li>
-            </ul>
-          </div>
-          
-          <div class="skill-container">
             <h3 class="skill-title">Tools & Technologies</h3>
             <ul class="skill-list">
-              <li>Git/GitHub</li>
-              <li>Docker</li>
-              <li>ImageJ/FIJI</li>
-              <li>Prism</li>
-              <li>LaTeX</li>
+              <li class="git-hub" data-skill="GitHub"></li>
+              <li class="microsoft-visual-studio" data-skill="Microsoft Visual Studio"></li>
+              <li class="anaconda" data-skill="Anaconda"></li>
+              <li class="arduino" data-skill="Arduino"></li>
             </ul>
           </div>
         </div>
@@ -195,7 +169,7 @@
     <section id="publications" class="publication-section">
       <div class="publications-container">
         <h1>Publications</h1>
-        <div class="publication-container">
+        <div class="publication-grid" id="publications-list">
           <div id="publications-content" class="loading">
             <div class="loader"></div>
             Loading publications...
@@ -210,7 +184,14 @@
     <script src="js/getGitHubRepos.js"></script>
     <script src="js/script.js"></script>
     <script src="js/experience.js"></script>
-    
+
+    <!-- Experience Modal Dialog (for mobile) -->
+    <div id="experience-modal" class="experience-modal" style="display:none;">
+      <div class="experience-modal-content">
+        <span class="experience-modal-close">&times;</span>
+        <div class="experience-modal-details"></div>
+      </div>
+    </div>
   </body>
 </html>
 

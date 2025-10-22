@@ -49,22 +49,24 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('printList function not found');
     }
-    
-    // Load GitHub projects with error handling
+
+    // Scroll-based navbar highlighting
+    initScrollSpy();
+});
+
+
+// Load GitHub projects after DOM and functions are ready
+document.addEventListener('DOMContentLoaded', function() {
     if (typeof printGitHubProjects === 'function') {
         printGitHubProjects('dcupolillo', 'github-projects', 6);
     } else {
         console.error('printGitHubProjects function not found - check if getGitHubRepos.js is loading');
-        
         // Fallback: show error in projects container
         const projectsContainer = document.getElementById('github-projects');
         if (projectsContainer) {
             projectsContainer.innerHTML = '<div class="error">GitHub integration not available</div>';
         }
     }
-
-    // Scroll-based navbar highlighting
-    initScrollSpy();
 });
 
 // Scroll spy functionality for navbar highlighting

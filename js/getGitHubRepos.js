@@ -101,45 +101,43 @@ async function createProjectFromRepo(repo, username) {
     // Fetch commit activity for this repository
     const activityData = await getRepoCommitActivity(username, repo.name);
     
-    return {
-        name: repo.name,
-        description: repo.description || 'No description available',
-        language: repo.language || 'Unknown',
-        stars: repo.stargazers_count,
-        forks: repo.forks_count,
-        updated: new Date(repo.updated_at),
-        url: repo.html_url,
-        homepage: repo.homepage,
-        topics: repo.topics || [],
-        activity: activityData,
-        
-        printDetails: function() {
-            const languageClass = this.language ? this.language.toLowerCase().replace(/[^a-z0-9]/g, '-') : 'unknown';
-            
-            return `
-                <div class="project-content">
-                    <div class="project-left">
-                        <h3>${this.name}</h3>
-                        <p class="project-description">${this.description}</p>
-                        <div class="project-topics">
-                            ${this.topics.map(topic => `<span class="topic">${topic}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="project-right">
-                        <div class="project-meta">
-                            <span class="language ${languageClass}">${this.language}</span>
-                            <span class="stars">⭐ ${this.stars}</span>
-                            <span class="forks">🍴 ${this.forks}</span>
-                        </div>
-                        <div class="project-activity">
-                            <span class="activity-label">Activity:</span>
-                            ${createActivityChart(this.activity)}
-                        </div>
-                    </div>
-                </div>
-            `.trim();
-        }
-    };
+        return {
+                name: repo.name,
+                description: repo.description || 'No description available',
+                language: repo.language || 'Unknown',
+                stars: repo.stargazers_count,
+                forks: repo.forks_count,
+                updated: new Date(repo.updated_at),
+                url: repo.html_url,
+                homepage: repo.homepage,
+                topics: repo.topics || [],
+                activity: activityData,
+                printDetails: function() {
+                        const languageClass = this.language ? this.language.toLowerCase().replace(/[^a-z0-9]/g, '-') : 'unknown';
+                        return `
+                            <div class="project-content">
+                                <div class="project-main">
+                                    <div class="project-row-top">
+                                        <h3>${this.name}</h3>
+                                        <div class="project-meta">
+                                            <span class="language ${languageClass}">${this.language}</span>
+                                            <span class="stars">⭐ ${this.stars}</span>
+                                            <span class="forks">🍴 ${this.forks}</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-row-bottom">
+                                        <p class="project-description">${this.description}</p>
+                                        <div class="project-activity">
+                                            <span class="activity-label">Activity:</span>
+                                            ${createActivityChart(this.activity)}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-side"></div>
+                            </div>
+                        `.trim();
+                }
+        };
 }
 
 async function printGitHubProjects(username, elementId, maxRepos = 6) {

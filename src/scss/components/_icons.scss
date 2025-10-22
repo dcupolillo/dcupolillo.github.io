@@ -20,7 +20,8 @@
   $size,
   $apply-filter: true
 ) {
-  background-image: url($path);
+  // Use a path relative to the compiled CSS (no leading slash)
+  background-image: url('#{$path}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
