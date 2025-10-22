@@ -16,8 +16,8 @@
     }
 
     .projects-container {
-        width: 1200px;
-        max-width: 95%;
+        width: 400px;
+        max-width: 75%;
         @include mx.flex-center(column);
 
         h1 {
@@ -33,8 +33,8 @@
         }
 
         .projects-container {
-            width: 100%;
-            max-width: 800px;
+            width: 75%;
+            max-width: 400px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
@@ -110,14 +110,19 @@
                     box-shadow: 0 8px 25px rgba(var.$primary-color, 0.15);
                 }
 
-                .project-content {
-                    display: flex;
-                    gap: 20px;
-                    align-items: flex-start;
-
-                    @media screen and (max-width: 768px) {
-                        flex-direction: column;
-                        gap: 15px;
+                .project-description {
+                    display: none;
+                    @media screen and (min-width: 930px) {
+                        display: block;
+                        color: rgba(var.$text-color, 0.9);
+                        line-height: 1.6;
+                        margin-bottom: 15px;
+                        font-size: 0.95em;
+                    }
+                    &:empty::before {
+                        content: "No description provided";
+                        color: rgba(var.$text-color, 0.5);
+                        font-style: italic;
                     }
                 }
 
@@ -131,8 +136,14 @@
                         font-weight: 900;
                         margin: 0 0 15px 0;
                         text-transform: capitalize;
-                        // text-align: center;
+                        text-align: center;
+
+                        @media screen and (min-width: 768px) {
+                            text-align: left;
+                        }
                     }
+
+                    
                 }
 
                 .project-right {
@@ -149,14 +160,18 @@
                 }
 
                 .project-meta {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 8px;
-                    padding: 12px;
-
-                    @media screen and (max-width: 768px) {
-                        justify-content: center;
+                    display: none;
+                    
+                    @media screen and (min-width: 768px) {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 8px;
+                        padding: 0;
                         flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin-top: 0;
+                        margin-bottom: 0;
                     }
 
                     .language {
@@ -175,19 +190,6 @@
                         font-size: 0.85em;
                         text-align: center;
                         padding: 4px 8px;
-                    }
-                }
-
-                .project-description {
-                    color: rgba(var.$text-color, 0.9);
-                    line-height: 1.6;
-                    margin-bottom: 15px;
-                    font-size: 0.95em;
-                    
-                    &:empty::before {
-                        content: "No description provided";
-                        color: rgba(var.$text-color, 0.5);
-                        font-style: italic;
                     }
                 }
 
@@ -210,39 +212,42 @@
                 }
 
                 .project-activity {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 8px;
-
-                    .activity-label {
-                        font-size: 0.75em;
-                        color: rgba(var.$text-color, 0.7);
-                        font-weight: 500;
-                        text-align: center;
-                        margin-bottom: 5px;
-                    }
-
-                    .activity-chart {
+                    display: none;
+                    @media screen and (min-width: 930px) {
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                        
-                        &.no-data {
-                            color: rgba(var.$text-color, 0.5);
-                            font-size: 0.7em;
-                            font-style: italic;
+                        padding: 8px;
+
+                        .activity-label {
+                            font-size: 0.75em;
+                            color: rgba(var.$text-color, 0.7);
+                            font-weight: 500;
                             text-align: center;
+                            margin-bottom: 5px;
                         }
 
-                        svg {
-                            width: 180px;
-                            height: 30px;
-                            @include mx.transition(all, 0.3s, ease-in-out);
+                        .activity-chart {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            
+                            &.no-data {
+                                color: rgba(var.$text-color, 0.5);
+                                font-size: 0.7em;
+                                font-style: italic;
+                                text-align: center;
+                            }
 
-                            polyline {
-                                @include mx.transition(stroke-width, 0.2s, ease);
-                                filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+                            svg {
+                                width: 180px;
+                                height: 30px;
+                                @include mx.transition(all, 0.3s, ease-in-out);
+
+                                polyline {
+                                    @include mx.transition(stroke-width, 0.2s, ease);
+                                    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+                                }
                             }
                         }
                     }

@@ -9,8 +9,8 @@
     color: var.$text-color;
     z-index: var.$z-fixed;
 
-    // Mobile (max-width: 768px)
-    @media screen and (max-width: 768px) {
+    // Mobile & tablet (max-width: 930px)
+    @media screen and (max-width: 930px) {
         position: fixed;
         top: 0;
         left: -100%;
@@ -33,7 +33,7 @@
     column-gap: 1rem;
 
     // Responsive Grid for mobile
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 930px) {
         height: 100%;
         display: grid;
         grid-template-rows: max-content 1fr max-content;
@@ -59,7 +59,7 @@
       color: var.$primary-color;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 930px) {
         .navbar.show & {
             display: block !important; // Ensure visibility when the menu is open
         }
@@ -93,7 +93,7 @@
             border-radius: 50%;
         }
 
-        @media screen and (max-width: 768px) {
+    @media screen and (max-width: 930px) {
             width: 56px;
             height: 56px;
             margin-bottom: 0.8rem;
@@ -108,7 +108,7 @@
         font-size: var.$font-size;
         margin-right: 0.8rem;
 
-        @media screen and (max-width: 768px) {
+    @media screen and (max-width: 930px) {
         text-align: left;
         }
     }
@@ -141,7 +141,7 @@
         padding: 0;
         list-style: none;
 
-        @media screen and (max-width: 768px) {
+    @media screen and (max-width: 930px) {
             flex-direction: column;
         }
 
@@ -212,7 +212,7 @@
         @include icons.icon("orcid", var.$icon-size);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 930px) {
         justify-content: center;
     }
 }
